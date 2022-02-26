@@ -1,0 +1,23 @@
+.navLinks li {
+  list-style-type: none;
+}
+.navLinks li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: 300;
+}
+.navLinks li a:hover {
+  text-shadow: 0px 0px 2px #ffffff;
+  text-decoration: overline;
+}
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.linksWrapper {
+  display: flex;
+  align-items: center;
+}

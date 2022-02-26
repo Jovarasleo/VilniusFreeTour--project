@@ -1,0 +1,26 @@
+.hamburger div {
+  width: 45px;
+  height: 2px;
+  background-color: var(--white);
+  border-radius: 3px;
+}
+.hamburger div:not(:last-child) {
+  margin-bottom: 8px;
+}
+.hamburger {
+  box-sizing: border-box;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--dark300);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.hamburger:hover {
+  background-color: var(--white);
+}
+.hamburger:hover div {
+  background-color: var(--dark300);
+}

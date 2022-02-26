@@ -1,0 +1,18 @@
+.navMobile {
+  position: absolute;
+  right: 0;
+  top: 120px;
+  background-color: var(--secondaryTheme);
+  width: 100%;
+}
+
+.navLinks li {
+  list-style-type: none;
+}
+.navLinks li a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: 300;
+}
