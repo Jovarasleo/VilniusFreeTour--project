@@ -49,9 +49,26 @@ h3 {
   margin-bottom: 30px;
   font-weight: 400;
 }
+.meetingPoint {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.meetingPoint div {
+  border-radius: 15px;
+  height: 400px;
+  width: 100%;
+  max-width: 500px;
+  background-color: var(--white);
+}
 @media only screen and (max-width: 1000px) {
   .cardsWrapper {
     grid-template-columns: 1fr 1fr;
+  }
+  .meetingPoint {
+    flex-direction: column;
   }
 }
 @media only screen and (max-width: 768px) {

@@ -1,14 +1,18 @@
 import Banner from "../components/banner";
 import TourCard from "../components/tourCard";
+import ImportantMsg from "../components/importantMsg";
 import groq from "groq";
 import { useRouter } from "next/router";
 import client from "../client";
-const Index = ({ post }) => {
-  console.log(post[0]?.description[0].children[0].text);
+const Index = ({ post, banner, msg }) => {
+  const bannerItem = banner[0]?.bannerImage?.asset?._ref;
   const router = useRouter();
   return (
     <>
-      <Banner />
+      <Banner background={bannerItem} />
+      {msg.length ? (
+        <ImportantMsg title={msg[0]?.title} children={msg[0]?.text} />
+      ) : null}
       <h3 className="homePage--sectionTitle">
         Walking <span className="colored">Tours</span> We Offer
       </h3>
@@ -32,18 +36,27 @@ const Index = ({ post }) => {
           <h3 className="homePage--sectionTitle">
             Meeting <span className="colored">Point</span>
           </h3>
+          <div className="meetingPoint">
+            <div className="meetingPoint--picture"></div>
+            <div className="meetingPoint--map"></div>
+          </div>
         </div>
       </section>
     </>
   );
 };
 export async function getServerSideProps(context) {
-  const query = `*[_type == "tour-card"]`;
-  const post = await client.fetch(query);
-  console.log(post);
+  const query1 = `*[_type == "tour-card"]`;
+  const query2 = `*[_type == "banner"]`;
+  const query3 = `*[_type == "ImpMsg"]`;
+  const post = await client.fetch(query1);
+  const banner = await client.fetch(query2);
+  const msg = await client.fetch(query3);
   return {
     props: {
       post,
+      banner,
+      msg,
     },
   };
 }
