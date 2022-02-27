@@ -15,7 +15,6 @@
   background-repeat: no-repeat;
   height: 0;
   padding-top: calc(1125 / 2400 * 100%);
-  margin-bottom: 50px;
 }
 .bannerText {
   color: white;
@@ -36,8 +35,14 @@
   font-weight: 400;
 }
 
-/* @media only screen and (min-width:1400px) {
-    .banner{
-
-    }
-} */
+@media only screen and (min-width: 1400px) {
+  .banner {
+    padding-top: calc(800 / 2400 * 100%);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .bannerText {
+    font-size: 2rem;
+    width: 80%;
+  }
+}

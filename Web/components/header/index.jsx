@@ -41,14 +41,14 @@ function Header() {
   return (
     <div className={styles.nav}>
       <div className={styles.navWrapper}>
-        <Image src={logo} alt="me" width="126" height="96" />
+        <Image src={logo} alt="me" width="94" height="72" />
         {isBreakpoint ? (
-          <Hamburger onClick={() => setToggle(!toggle)} />
+          <Hamburger onClick={() => setToggle(!toggle)} toggle={toggle} />
         ) : (
           <NavDesktop />
         )}
       </div>
-      {toggle && <NavMobile />}
+      {toggle && <NavMobile toggle={toggle} />}
     </div>
   );
 }

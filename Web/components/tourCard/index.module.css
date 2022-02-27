@@ -1,14 +1,94 @@
 .card {
+  box-shadow: 0px 0px 5px rgba(71, 71, 71, 0.726);
   border-radius: 15px;
-  max-width: 350px;
+  max-width: 320px;
   height: 460px;
   background-color: var(--white);
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 5px solid var(--dark300);
+  /* border: 3px solid var(--dark300); */
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+}
+.card img {
+  width: 100%;
+}
+.cardPinch {
+  background-color: var(--primaryTheme);
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  bottom: -40px;
+  right: -40px;
+  transform: rotate(45deg);
+  z-index: 1;
 }
 .title {
   margin: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.description {
+  margin: 0 15px;
+}
+.cardOverlay {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  height: 101%;
+  width: 101%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+.cardOverlay h6 {
+  text-align: center;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 200;
+  top: 20%;
+}
+.card:hover .cardOverlay {
+  opacity: 1;
+}
+.card:hover {
+  border-color: var(--boneWhite);
+}
+.contentDetails {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  -moz-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.card:hover .contentDetails {
+  top: 90%;
+  left: 50%;
+  opacity: 1;
 }
