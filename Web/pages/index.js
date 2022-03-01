@@ -50,7 +50,7 @@ const Index = ({ tours, banner, msg }) => {
     </>
   );
 };
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const query1 = `*[_type == "tour-card"]`;
   const query2 = `*[_type == "banner"]`;
   const query3 = `*[_type == "ImpMsg"]`;
