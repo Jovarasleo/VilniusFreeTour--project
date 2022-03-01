@@ -1,5 +1,4 @@
-// index.js
-const Index = () => {
+const about = () => {
   return (
     <div>
       <p>About page</p>
@@ -7,4 +6,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default about;
