@@ -20,7 +20,7 @@ const Index = ({ tours, banner, msg }) => {
             return (
               <Link
                 key={card.title}
-                href="/tours/[slug]"
+                href="/tours/[tours]"
                 as={`/tours/${card?.slug?.current}`}
               >
                 <a>
