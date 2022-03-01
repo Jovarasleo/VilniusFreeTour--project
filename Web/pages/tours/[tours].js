@@ -1,16 +1,17 @@
 import client from "../../client";
 
-const Tour = ({ post }) => {
+const Tour = ({ tours }) => {
+  console.log(tours);
   return (
     <article>
-      <h1>{post?.title}</h1>
+      <h1>{tours?.title}</h1>
     </article>
   );
 };
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
-    `*[_type == "tour-card" && defined(slug.current)][].slug.current`
+    `*[_type == "tour-card" && defined(tours.current)][].tours.current`
   );
 
   return {
@@ -22,15 +23,15 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
-  const post = await client.fetch(
+  const tours = await client.fetch(
     `
-    *[_type == "tour-card" && slug.current == $slug][0]
+    *[_type == "tour-card" && tours.current == $slug][0]
   `,
     { slug }
   );
   return {
     props: {
-      post,
+      tours,
     },
   };
 }
