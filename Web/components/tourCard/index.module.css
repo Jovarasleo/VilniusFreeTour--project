@@ -1,4 +1,8 @@
 .card {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
   box-shadow: 0px 0px 5px rgba(71, 71, 71, 0.726);
   border-radius: 15px;
   max-width: 320px;

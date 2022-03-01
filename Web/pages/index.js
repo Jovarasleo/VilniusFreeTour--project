@@ -1,12 +1,10 @@
 import Banner from "../components/banner";
+import Link from "next/link";
 import TourCard from "../components/tourCard";
 import ImportantMsg from "../components/importantMsg";
-import groq from "groq";
-import { useRouter } from "next/router";
 import client from "../client";
-const Index = ({ post, banner, msg }) => {
+const Index = ({ tours, banner, msg }) => {
   const bannerItem = banner[0]?.bannerImage?.asset?._ref;
-  const router = useRouter();
   return (
     <>
       <Banner background={bannerItem} />
@@ -18,15 +16,22 @@ const Index = ({ post, banner, msg }) => {
       </h3>
       <div className="contentWrapper">
         <div className="cardsWrapper">
-          {post?.map((card) => {
+          {tours?.map((card) => {
             return (
-              <TourCard
+              <Link
                 key={card.title}
-                onClick={() => router.push(`/tours/${card.slug.current}`)}
-                coverImg={card.mainImage?.asset?._ref}
-                title={card.title}
-                description={card.description[0].children[0].text}
-              />
+                href="/tours/[slug]"
+                as={`/tours/${card?.slug?.current}`}
+              >
+                <a>
+                  <TourCard
+                    key={card.title}
+                    coverImg={card.mainImage?.asset?._ref}
+                    title={card.title}
+                    description={card.description[0].children[0].text}
+                  />
+                </a>
+              </Link>
             );
           })}
         </div>
@@ -45,16 +50,16 @@ const Index = ({ post, banner, msg }) => {
     </>
   );
 };
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
   const query1 = `*[_type == "tour-card"]`;
   const query2 = `*[_type == "banner"]`;
   const query3 = `*[_type == "ImpMsg"]`;
-  const post = await client.fetch(query1);
+  const tours = await client.fetch(query1);
   const banner = await client.fetch(query2);
   const msg = await client.fetch(query3);
   return {
     props: {
-      post,
+      tours,
       banner,
       msg,
     },

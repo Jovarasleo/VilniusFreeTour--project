@@ -14,9 +14,13 @@
   padding: 0;
   font-family: "Roboto Slab", serif;
 }
-/* body {
-  background-color: rgb(241, 237, 237);
-} */
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
 .colored {
   color: var(--primaryTheme);
 }
@@ -31,7 +35,7 @@ h3 {
 .cardsWrapper {
   display: grid;
   justify-items: center;
-  margin: 20px 00px;
+  margin: 20px 0px;
   gap: 40px;
   grid-template-columns: 1fr 1fr 1fr;
 }

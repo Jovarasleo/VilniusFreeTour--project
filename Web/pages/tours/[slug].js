@@ -3,7 +3,7 @@ import client from "../../client";
 const Tour = ({ post }) => {
   return (
     <article>
-      <h1>{post.title}</h1>
+      <h1>{post?.title}</h1>
     </article>
   );
 };

@@ -1,11 +1,9 @@
 import client from "../../client";
-
 const Post = ({ post }) => {
-  console.log(post.body[0].children[0].text);
   return (
     <article>
-      <h1>{post.title}</h1>
-      <h1>{post.body[0].children[0].text}</h1>
+      <h1>{post?.title}</h1>
+      <h1>{post?.body[0]?.children[0]?.text}</h1>
     </article>
   );
 };
@@ -20,7 +18,6 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
-
 export async function getStaticProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
@@ -36,5 +33,4 @@ export async function getStaticProps(context) {
     },
   };
 }
-
 export default Post;

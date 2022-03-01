@@ -1,154 +1,441 @@
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/index";
-exports.ids = ["pages/index"];
+exports.id = 405;
+exports.ids = [405];
 exports.modules = {
 
-/***/ "./components/banner/index.module.css":
-/*!********************************************!*\
-  !*** ./components/banner/index.module.css ***!
-  \********************************************/
+/***/ 5923:
 /***/ ((module) => {
 
-eval("// Exports\nmodule.exports = {\n\t\"banner\": \"banner_banner__IBpVz\",\n\t\"bannerText\": \"banner_bannerText__c5NjO\",\n\t\"extra\": \"banner_extra__hXahC\",\n\t\"extra2\": \"banner_extra2___lsUb\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2Jhbm5lci9pbmRleC5tb2R1bGUuY3NzLmpzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vd2ViLy4vY29tcG9uZW50cy9iYW5uZXIvaW5kZXgubW9kdWxlLmNzcz9jNzE2Il0sInNvdXJjZXNDb250ZW50IjpbIi8vIEV4cG9ydHNcbm1vZHVsZS5leHBvcnRzID0ge1xuXHRcImJhbm5lclwiOiBcImJhbm5lcl9iYW5uZXJfX0lCcFZ6XCIsXG5cdFwiYmFubmVyVGV4dFwiOiBcImJhbm5lcl9iYW5uZXJUZXh0X19jNU5qT1wiLFxuXHRcImV4dHJhXCI6IFwiYmFubmVyX2V4dHJhX19oWGFoQ1wiLFxuXHRcImV4dHJhMlwiOiBcImJhbm5lcl9leHRyYTJfX19sc1ViXCJcbn07XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/banner/index.module.css\n");
+// Exports
+module.exports = {
+	"banner": "banner_banner__IBpVz",
+	"bannerText": "banner_bannerText__c5NjO",
+	"extra": "banner_extra__hXahC",
+	"extra2": "banner_extra2___lsUb"
+};
+
 
 /***/ }),
 
-/***/ "./components/importantMsg/index.module.css":
-/*!**************************************************!*\
-  !*** ./components/importantMsg/index.module.css ***!
-  \**************************************************/
+/***/ 6497:
 /***/ ((module) => {
 
-eval("// Exports\nmodule.exports = {\n\t\"important\": \"importantMsg_important__GqHXF\",\n\t\"title\": \"importantMsg_title__kBs2x\",\n\t\"msg\": \"importantMsg_msg__vBkaA\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2ltcG9ydGFudE1zZy9pbmRleC5tb2R1bGUuY3NzLmpzIiwibWFwcGluZ3MiOiJBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYi8uL2NvbXBvbmVudHMvaW1wb3J0YW50TXNnL2luZGV4Lm1vZHVsZS5jc3M/MmFhOCJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBFeHBvcnRzXG5tb2R1bGUuZXhwb3J0cyA9IHtcblx0XCJpbXBvcnRhbnRcIjogXCJpbXBvcnRhbnRNc2dfaW1wb3J0YW50X19HcUhYRlwiLFxuXHRcInRpdGxlXCI6IFwiaW1wb3J0YW50TXNnX3RpdGxlX19rQnMyeFwiLFxuXHRcIm1zZ1wiOiBcImltcG9ydGFudE1zZ19tc2dfX3ZCa2FBXCJcbn07XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/importantMsg/index.module.css\n");
+// Exports
+module.exports = {
+	"important": "importantMsg_important__GqHXF",
+	"title": "importantMsg_title__kBs2x",
+	"msg": "importantMsg_msg__vBkaA"
+};
+
 
 /***/ }),
 
-/***/ "./components/tourCard/index.module.css":
-/*!**********************************************!*\
-  !*** ./components/tourCard/index.module.css ***!
-  \**********************************************/
+/***/ 77:
 /***/ ((module) => {
 
-eval("// Exports\nmodule.exports = {\n\t\"card\": \"tourCard_card___CEzR\",\n\t\"cardPinch\": \"tourCard_cardPinch__xxG2e\",\n\t\"title\": \"tourCard_title__q0rr3\",\n\t\"description\": \"tourCard_description__FYeKB\",\n\t\"cardOverlay\": \"tourCard_cardOverlay__7EEpO\",\n\t\"contentDetails\": \"tourCard_contentDetails__gznBs\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL3RvdXJDYXJkL2luZGV4Lm1vZHVsZS5jc3MuanMiLCJtYXBwaW5ncyI6IkFBQUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vd2ViLy4vY29tcG9uZW50cy90b3VyQ2FyZC9pbmRleC5tb2R1bGUuY3NzPzM4NmQiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gRXhwb3J0c1xubW9kdWxlLmV4cG9ydHMgPSB7XG5cdFwiY2FyZFwiOiBcInRvdXJDYXJkX2NhcmRfX19DRXpSXCIsXG5cdFwiY2FyZFBpbmNoXCI6IFwidG91ckNhcmRfY2FyZFBpbmNoX194eEcyZVwiLFxuXHRcInRpdGxlXCI6IFwidG91ckNhcmRfdGl0bGVfX3EwcnIzXCIsXG5cdFwiZGVzY3JpcHRpb25cIjogXCJ0b3VyQ2FyZF9kZXNjcmlwdGlvbl9fRlllS0JcIixcblx0XCJjYXJkT3ZlcmxheVwiOiBcInRvdXJDYXJkX2NhcmRPdmVybGF5X183RUVwT1wiLFxuXHRcImNvbnRlbnREZXRhaWxzXCI6IFwidG91ckNhcmRfY29udGVudERldGFpbHNfX2d6bkJzXCJcbn07XG4iXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/tourCard/index.module.css\n");
+// Exports
+module.exports = {
+	"card": "tourCard_card___CEzR",
+	"cardPinch": "tourCard_cardPinch__xxG2e",
+	"title": "tourCard_title__q0rr3",
+	"description": "tourCard_description__FYeKB",
+	"cardOverlay": "tourCard_cardOverlay__7EEpO",
+	"contentDetails": "tourCard_contentDetails__gznBs"
+};
+
 
 /***/ }),
 
-/***/ "./client.js":
-/*!*******************!*\
-  !*** ./client.js ***!
-  \*******************/
+/***/ 8809:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _sanity_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @sanity/client */ \"@sanity/client\");\n/* harmony import */ var _sanity_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sanity_client__WEBPACK_IMPORTED_MODULE_0__);\n// client.js\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_sanity_client__WEBPACK_IMPORTED_MODULE_0___default()({\n    projectId: \"tohdfp7d\",\n    dataset: \"production\",\n    useCdn: true,\n    apiVersion: \"2021-08-31\"\n}));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jbGllbnQuanMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsRUFBWTtBQUM2QjtBQUV6QyxpRUFBZUEscURBQVksQ0FBQyxDQUFDO0lBQzNCQyxTQUFTLEVBQUUsQ0FBVTtJQUNyQkMsT0FBTyxFQUFFLENBQVk7SUFDckJDLE1BQU0sRUFBRSxJQUFJO0lBQ1pDLFVBQVUsRUFBRSxDQUFZO0FBQzFCLENBQUMsQ0FBQyxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vd2ViLy4vY2xpZW50LmpzPzk3MTUiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gY2xpZW50LmpzXHJcbmltcG9ydCBzYW5pdHlDbGllbnQgZnJvbSBcIkBzYW5pdHkvY2xpZW50XCI7XHJcblxyXG5leHBvcnQgZGVmYXVsdCBzYW5pdHlDbGllbnQoe1xyXG4gIHByb2plY3RJZDogXCJ0b2hkZnA3ZFwiLCAvLyB5b3UgY2FuIGZpbmQgdGhpcyBpbiBzYW5pdHkuanNvblxyXG4gIGRhdGFzZXQ6IFwicHJvZHVjdGlvblwiLCAvLyBvciB0aGUgbmFtZSB5b3UgY2hvc2UgaW4gc3RlcCAxXHJcbiAgdXNlQ2RuOiB0cnVlLCAvLyBgZmFsc2VgIGlmIHlvdSB3YW50IHRvIGVuc3VyZSBmcmVzaCBkYXRhXHJcbiAgYXBpVmVyc2lvbjogXCIyMDIxLTA4LTMxXCIsXHJcbn0pO1xyXG4iXSwibmFtZXMiOlsic2FuaXR5Q2xpZW50IiwicHJvamVjdElkIiwiZGF0YXNldCIsInVzZUNkbiIsImFwaVZlcnNpb24iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./client.js\n");
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "Z": () => (/* binding */ client)
+});
+
+;// CONCATENATED MODULE: external "@sanity/client"
+const client_namespaceObject = require("@sanity/client");
+var client_default = /*#__PURE__*/__webpack_require__.n(client_namespaceObject);
+;// CONCATENATED MODULE: ./client.js
+// client.js
+
+/* harmony default export */ const client = (client_default()({
+    projectId: "tohdfp7d",
+    dataset: "production",
+    useCdn: true,
+    apiVersion: "2021-08-31"
+}));
+
 
 /***/ }),
 
-/***/ "./components/banner/index.jsx":
-/*!*************************************!*\
-  !*** ./components/banner/index.jsx ***!
-  \*************************************/
+/***/ 3507:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.module.css */ \"./components/banner/index.module.css\");\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_module_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _sanity_image_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @sanity/image-url */ \"@sanity/image-url\");\n/* harmony import */ var _sanity_image_url__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sanity_image_url__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../client */ \"./client.js\");\n\n\n\n\nfunction urlFor(source) {\n    return _sanity_image_url__WEBPACK_IMPORTED_MODULE_1___default()(_client__WEBPACK_IMPORTED_MODULE_2__[\"default\"]).image(source);\n}\nfunction Banner({ background  }) {\n    return(/*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n            className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().banner),\n            style: {\n                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${urlFor(background)})`\n            },\n            children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h1\", {\n                className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().bannerText),\n                children: [\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                        children: \"VILNIUS \"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\banner\\\\index.jsx\",\n                        lineNumber: 19,\n                        columnNumber: 11\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                        className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().extra),\n                        children: \"FREE \"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\banner\\\\index.jsx\",\n                        lineNumber: 20,\n                        columnNumber: 11\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                        children: \"WALKING \"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\banner\\\\index.jsx\",\n                        lineNumber: 21,\n                        columnNumber: 11\n                    }, this),\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                        className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().extra2),\n                        children: \"TOURS\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\banner\\\\index.jsx\",\n                        lineNumber: 22,\n                        columnNumber: 11\n                    }, this)\n                ]\n            }, void 0, true, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\banner\\\\index.jsx\",\n                lineNumber: 18,\n                columnNumber: 9\n            }, this)\n        }, void 0, false, {\n            fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\banner\\\\index.jsx\",\n            lineNumber: 10,\n            columnNumber: 7\n        }, this)\n    }, void 0, false));\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Banner);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2Jhbm5lci9pbmRleC5qc3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7O0FBQXVDO0FBQ1E7QUFDZDtTQUN4QkcsTUFBTSxDQUFDQyxNQUFNLEVBQUUsQ0FBQztJQUN2QixNQUFNLENBQUNILHdEQUFlLENBQUNDLCtDQUFNLEVBQUVHLEtBQUssQ0FBQ0QsTUFBTTtBQUM3QyxDQUFDO1NBQ1FFLE1BQU0sQ0FBQyxDQUFDLENBQUNDLFVBQVUsRUFBQyxDQUFDLEVBQUUsQ0FBQztJQUMvQixNQUFNOzhGQUVEQyxDQUFHO1lBQ0ZDLFNBQVMsRUFBRVQsaUVBQWE7WUFDeEJXLEtBQUssRUFBRSxDQUFDO2dCQUNOQyxlQUFlLEdBQUcsNkRBQTZELEVBQUVULE1BQU0sQ0FDckZJLFVBQVUsRUFDVixDQUFDO1lBQ0wsQ0FBQztrR0FFQU0sQ0FBRTtnQkFBQ0osU0FBUyxFQUFFVCxxRUFBaUI7O2dHQUM3QmUsQ0FBSTtrQ0FBQyxDQUFROzs7Ozs7Z0dBQ2JBLENBQUk7d0JBQUNOLFNBQVMsRUFBRVQsZ0VBQVk7a0NBQUUsQ0FBSzs7Ozs7O2dHQUNuQ2UsQ0FBSTtrQ0FBQyxDQUFROzs7Ozs7Z0dBQ2JBLENBQUk7d0JBQUNOLFNBQVMsRUFBRVQsaUVBQWE7a0NBQUUsQ0FBSzs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBSy9DLENBQUM7QUFDRCxpRUFBZU0sTUFBTSxFQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vd2ViLy4vY29tcG9uZW50cy9iYW5uZXIvaW5kZXguanN4P2I1NTMiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlcyBmcm9tIFwiLi9pbmRleC5tb2R1bGUuY3NzXCI7XHJcbmltcG9ydCBpbWFnZVVybEJ1aWxkZXIgZnJvbSBcIkBzYW5pdHkvaW1hZ2UtdXJsXCI7XHJcbmltcG9ydCBjbGllbnQgZnJvbSBcIi4uLy4uL2NsaWVudFwiO1xyXG5mdW5jdGlvbiB1cmxGb3Ioc291cmNlKSB7XHJcbiAgcmV0dXJuIGltYWdlVXJsQnVpbGRlcihjbGllbnQpLmltYWdlKHNvdXJjZSk7XHJcbn1cclxuZnVuY3Rpb24gQmFubmVyKHsgYmFja2dyb3VuZCB9KSB7XHJcbiAgcmV0dXJuIChcclxuICAgIDw+XHJcbiAgICAgIDxkaXZcclxuICAgICAgICBjbGFzc05hbWU9e3N0eWxlcy5iYW5uZXJ9XHJcbiAgICAgICAgc3R5bGU9e3tcclxuICAgICAgICAgIGJhY2tncm91bmRJbWFnZTogYGxpbmVhci1ncmFkaWVudChyZ2JhKDAsIDAsIDAsIDAuNSksIHJnYmEoMCwgMCwgMCwgMC41KSksIHVybCgke3VybEZvcihcclxuICAgICAgICAgICAgYmFja2dyb3VuZFxyXG4gICAgICAgICAgKX0pYCxcclxuICAgICAgICB9fVxyXG4gICAgICA+XHJcbiAgICAgICAgPGgxIGNsYXNzTmFtZT17c3R5bGVzLmJhbm5lclRleHR9PlxyXG4gICAgICAgICAgPHNwYW4+VklMTklVUyA8L3NwYW4+XHJcbiAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9e3N0eWxlcy5leHRyYX0+RlJFRSA8L3NwYW4+XHJcbiAgICAgICAgICA8c3Bhbj5XQUxLSU5HIDwvc3Bhbj5cclxuICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT17c3R5bGVzLmV4dHJhMn0+VE9VUlM8L3NwYW4+XHJcbiAgICAgICAgPC9oMT5cclxuICAgICAgPC9kaXY+XHJcbiAgICA8Lz5cclxuICApO1xyXG59XHJcbmV4cG9ydCBkZWZhdWx0IEJhbm5lcjtcclxuIl0sIm5hbWVzIjpbInN0eWxlcyIsImltYWdlVXJsQnVpbGRlciIsImNsaWVudCIsInVybEZvciIsInNvdXJjZSIsImltYWdlIiwiQmFubmVyIiwiYmFja2dyb3VuZCIsImRpdiIsImNsYXNzTmFtZSIsImJhbm5lciIsInN0eWxlIiwiYmFja2dyb3VuZEltYWdlIiwiaDEiLCJiYW5uZXJUZXh0Iiwic3BhbiIsImV4dHJhIiwiZXh0cmEyIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./components/banner/index.jsx\n");
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ pages),
+  "getStaticProps": () => (/* binding */ getStaticProps)
+});
+
+// EXTERNAL MODULE: external "react/jsx-runtime"
+var jsx_runtime_ = __webpack_require__(997);
+// EXTERNAL MODULE: ./components/banner/index.module.css
+var index_module = __webpack_require__(5923);
+var index_module_default = /*#__PURE__*/__webpack_require__.n(index_module);
+;// CONCATENATED MODULE: external "@sanity/image-url"
+const image_url_namespaceObject = require("@sanity/image-url");
+var image_url_default = /*#__PURE__*/__webpack_require__.n(image_url_namespaceObject);
+// EXTERNAL MODULE: ./client.js + 1 modules
+var client = __webpack_require__(8809);
+;// CONCATENATED MODULE: ./components/banner/index.jsx
+
+
+
+
+function urlFor(source) {
+    return image_url_default()(client/* default */.Z).image(source);
+}
+function Banner({ background  }) {
+    return(/*#__PURE__*/ jsx_runtime_.jsx(jsx_runtime_.Fragment, {
+        children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+            className: (index_module_default()).banner,
+            style: {
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${urlFor(background)})`
+            },
+            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("h1", {
+                className: (index_module_default()).bannerText,
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        children: "VILNIUS "
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        className: (index_module_default()).extra,
+                        children: "FREE "
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        children: "WALKING "
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        className: (index_module_default()).extra2,
+                        children: "TOURS"
+                    })
+                ]
+            })
+        })
+    }));
+}
+/* harmony default export */ const components_banner = (Banner);
+
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(1664);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(6689);
+// EXTERNAL MODULE: ./components/tourCard/index.module.css
+var tourCard_index_module = __webpack_require__(77);
+var tourCard_index_module_default = /*#__PURE__*/__webpack_require__.n(tourCard_index_module);
+;// CONCATENATED MODULE: ./components/tourCard/index.jsx
+
+
+
+
+function tourCard_urlFor(source) {
+    return image_url_default()(client/* default */.Z).image(source);
+}
+function tourCard({ title , description , coverImg , imgAlt , onClick  }) {
+    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: (tourCard_index_module_default()).card,
+        onClick: onClick,
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                className: (tourCard_index_module_default()).cardPinch
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                className: (tourCard_index_module_default()).cardOverlay,
+                children: /*#__PURE__*/ jsx_runtime_.jsx("h6", {
+                    className: (tourCard_index_module_default()).contentDetails,
+                    children: "Read more!"
+                })
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                src: tourCard_urlFor(coverImg).width(320).height(200).fit("max").auto("format"),
+                alt: imgAlt
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("h4", {
+                className: (tourCard_index_module_default()).title,
+                children: title
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                className: (tourCard_index_module_default()).description,
+                children: description
+            })
+        ]
+    }));
+}
+/* harmony default export */ const components_tourCard = (tourCard);
+
+// EXTERNAL MODULE: ./components/importantMsg/index.module.css
+var importantMsg_index_module = __webpack_require__(6497);
+var importantMsg_index_module_default = /*#__PURE__*/__webpack_require__.n(importantMsg_index_module);
+;// CONCATENATED MODULE: ./components/importantMsg/index.jsx
+
+
+function importantMsg({ title , children  }) {
+    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+        className: (importantMsg_index_module_default()).important,
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx("h2", {
+                className: (importantMsg_index_module_default()).title,
+                children: title
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                className: (importantMsg_index_module_default()).msg,
+                children: children
+            })
+        ]
+    }));
+}
+/* harmony default export */ const components_importantMsg = (importantMsg);
+
+// EXTERNAL MODULE: ./context/toursContext.js
+var toursContext = __webpack_require__(3762);
+;// CONCATENATED MODULE: ./pages/index.js
+
+
+
+
+
+
+
+
+const Index = ({ tours , banner , msg  })=>{
+    var ref7, ref1, ref2, ref3, ref4;
+    const bannerItem = (ref7 = banner[0]) === null || ref7 === void 0 ? void 0 : (ref1 = ref7.bannerImage) === null || ref1 === void 0 ? void 0 : (ref2 = ref1.asset) === null || ref2 === void 0 ? void 0 : ref2._ref;
+    return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
+        children: [
+            /*#__PURE__*/ jsx_runtime_.jsx(components_banner, {
+                background: bannerItem
+            }),
+            msg.length ? /*#__PURE__*/ jsx_runtime_.jsx(components_importantMsg, {
+                title: (ref3 = msg[0]) === null || ref3 === void 0 ? void 0 : ref3.title,
+                children: (ref4 = msg[0]) === null || ref4 === void 0 ? void 0 : ref4.text
+            }) : null,
+            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("h3", {
+                className: "homePage--sectionTitle",
+                children: [
+                    "Walking ",
+                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                        className: "colored",
+                        children: "Tours"
+                    }),
+                    " We Offer"
+                ]
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                className: "contentWrapper",
+                children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    className: "cardsWrapper",
+                    children: tours === null || tours === void 0 ? void 0 : tours.map((card)=>{
+                        var ref, ref5, ref6;
+                        return(/*#__PURE__*/ jsx_runtime_.jsx(next_link["default"], {
+                            href: "/tours/[slug]",
+                            as: `/tours/${card === null || card === void 0 ? void 0 : (ref = card.slug) === null || ref === void 0 ? void 0 : ref.current}`,
+                            children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
+                                children: /*#__PURE__*/ jsx_runtime_.jsx(components_tourCard, {
+                                    coverImg: (ref5 = card.mainImage) === null || ref5 === void 0 ? void 0 : (ref6 = ref5.asset) === null || ref6 === void 0 ? void 0 : ref6._ref,
+                                    title: card.title,
+                                    description: card.description[0].children[0].text
+                                }, card.title)
+                            })
+                        }, card.title));
+                    })
+                })
+            }),
+            /*#__PURE__*/ jsx_runtime_.jsx("section", {
+                className: "meetingSection",
+                children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                    className: "contentWrapper",
+                    children: [
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("h3", {
+                            className: "homePage--sectionTitle",
+                            children: [
+                                "Meeting ",
+                                /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                    className: "colored",
+                                    children: "Point"
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                            className: "meetingPoint",
+                            children: [
+                                /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                    className: "meetingPoint--picture"
+                                }),
+                                /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                                    className: "meetingPoint--map"
+                                })
+                            ]
+                        })
+                    ]
+                })
+            })
+        ]
+    }));
+};
+async function getStaticProps() {
+    const query1 = `*[_type == "tour-card"]`;
+    const query2 = `*[_type == "banner"]`;
+    const query3 = `*[_type == "ImpMsg"]`;
+    const tours = await client/* default.fetch */.Z.fetch(query1);
+    const banner = await client/* default.fetch */.Z.fetch(query2);
+    const msg = await client/* default.fetch */.Z.fetch(query3);
+    return {
+        props: {
+            tours,
+            banner,
+            msg
+        }
+    };
+}
+/* harmony default export */ const pages = (Index);
+
 
 /***/ }),
 
-/***/ "./components/importantMsg/index.jsx":
-/*!*******************************************!*\
-  !*** ./components/importantMsg/index.jsx ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.module.css */ \"./components/importantMsg/index.module.css\");\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_module_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\nfunction importantMsg({ title , children  }) {\n    return(/*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().important),\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h2\", {\n                className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().title),\n                children: title\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\importantMsg\\\\index.jsx\",\n                lineNumber: 5,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                className: (_index_module_css__WEBPACK_IMPORTED_MODULE_1___default().msg),\n                children: children\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\importantMsg\\\\index.jsx\",\n                lineNumber: 6,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\importantMsg\\\\index.jsx\",\n        lineNumber: 4,\n        columnNumber: 5\n    }, this));\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (importantMsg);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL2ltcG9ydGFudE1zZy9pbmRleC5qc3guanMiLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQXVDO1NBQzlCQyxZQUFZLENBQUMsQ0FBQyxDQUFDQyxLQUFLLEdBQUVDLFFBQVEsRUFBQyxDQUFDLEVBQUUsQ0FBQztJQUMxQyxNQUFNLDZFQUNIQyxDQUFHO1FBQUNDLFNBQVMsRUFBRUwsb0VBQWdCOzt3RkFDN0JPLENBQUU7Z0JBQUNGLFNBQVMsRUFBRUwsZ0VBQVk7MEJBQUdFLEtBQUs7Ozs7Ozt3RkFDbENNLENBQUM7Z0JBQUNILFNBQVMsRUFBRUwsOERBQVU7MEJBQUdHLFFBQVE7Ozs7Ozs7Ozs7OztBQUd6QyxDQUFDO0FBQ0QsaUVBQWVGLFlBQVksRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYi8uL2NvbXBvbmVudHMvaW1wb3J0YW50TXNnL2luZGV4LmpzeD85ZjRiIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBzdHlsZXMgZnJvbSBcIi4vaW5kZXgubW9kdWxlLmNzc1wiO1xyXG5mdW5jdGlvbiBpbXBvcnRhbnRNc2coeyB0aXRsZSwgY2hpbGRyZW4gfSkge1xyXG4gIHJldHVybiAoXHJcbiAgICA8ZGl2IGNsYXNzTmFtZT17c3R5bGVzLmltcG9ydGFudH0+XHJcbiAgICAgIDxoMiBjbGFzc05hbWU9e3N0eWxlcy50aXRsZX0+e3RpdGxlfTwvaDI+XHJcbiAgICAgIDxwIGNsYXNzTmFtZT17c3R5bGVzLm1zZ30+e2NoaWxkcmVufTwvcD5cclxuICAgIDwvZGl2PlxyXG4gICk7XHJcbn1cclxuZXhwb3J0IGRlZmF1bHQgaW1wb3J0YW50TXNnO1xyXG4iXSwibmFtZXMiOlsic3R5bGVzIiwiaW1wb3J0YW50TXNnIiwidGl0bGUiLCJjaGlsZHJlbiIsImRpdiIsImNsYXNzTmFtZSIsImltcG9ydGFudCIsImgyIiwicCIsIm1zZyJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/importantMsg/index.jsx\n");
-
-/***/ }),
-
-/***/ "./components/tourCard/index.jsx":
-/*!***************************************!*\
-  !*** ./components/tourCard/index.jsx ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./index.module.css */ \"./components/tourCard/index.module.css\");\n/* harmony import */ var _index_module_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_index_module_css__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _sanity_image_url__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @sanity/image-url */ \"@sanity/image-url\");\n/* harmony import */ var _sanity_image_url__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_sanity_image_url__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../client */ \"./client.js\");\n\n\n\n\nfunction urlFor(source) {\n    return _sanity_image_url__WEBPACK_IMPORTED_MODULE_1___default()(_client__WEBPACK_IMPORTED_MODULE_2__[\"default\"]).image(source);\n}\nfunction tourCard({ title , description , coverImg , imgAlt , onClick  }) {\n    return(/*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n        className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().card),\n        onClick: onClick,\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().cardPinch)\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\tourCard\\\\index.jsx\",\n                lineNumber: 10,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().cardOverlay),\n                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h6\", {\n                    className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().contentDetails),\n                    children: \"Read more!\"\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\tourCard\\\\index.jsx\",\n                    lineNumber: 12,\n                    columnNumber: 9\n                }, this)\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\tourCard\\\\index.jsx\",\n                lineNumber: 11,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"img\", {\n                src: urlFor(coverImg).width(320).height(200).fit(\"max\").auto(\"format\"),\n                alt: imgAlt\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\tourCard\\\\index.jsx\",\n                lineNumber: 14,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h4\", {\n                className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().title),\n                children: title\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\tourCard\\\\index.jsx\",\n                lineNumber: 18,\n                columnNumber: 7\n            }, this),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"p\", {\n                className: (_index_module_css__WEBPACK_IMPORTED_MODULE_3___default().description),\n                children: description\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\tourCard\\\\index.jsx\",\n                lineNumber: 19,\n                columnNumber: 7\n            }, this)\n        ]\n    }, void 0, true, {\n        fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\components\\\\tourCard\\\\index.jsx\",\n        lineNumber: 9,\n        columnNumber: 5\n    }, this));\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tourCard);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9jb21wb25lbnRzL3RvdXJDYXJkL2luZGV4LmpzeC5qcyIsIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFBdUM7QUFDUTtBQUNkO1NBQ3hCRyxNQUFNLENBQUNDLE1BQU0sRUFBRSxDQUFDO0lBQ3ZCLE1BQU0sQ0FBQ0gsd0RBQWUsQ0FBQ0MsK0NBQU0sRUFBRUcsS0FBSyxDQUFDRCxNQUFNO0FBQzdDLENBQUM7U0FDUUUsUUFBUSxDQUFDLENBQUMsQ0FBQ0MsS0FBSyxHQUFFQyxXQUFXLEdBQUVDLFFBQVEsR0FBRUMsTUFBTSxHQUFFQyxPQUFPLEVBQUMsQ0FBQyxFQUFFLENBQUM7SUFDcEUsTUFBTSw2RUFDSEMsQ0FBRztRQUFDQyxTQUFTLEVBQUViLCtEQUFXO1FBQUVXLE9BQU8sRUFBRUEsT0FBTzs7d0ZBQzFDQyxDQUFHO2dCQUFDQyxTQUFTLEVBQUViLG9FQUFnQjs7Ozs7O3dGQUMvQlksQ0FBRztnQkFBQ0MsU0FBUyxFQUFFYixzRUFBa0I7c0dBQy9CaUIsQ0FBRTtvQkFBQ0osU0FBUyxFQUFFYix5RUFBcUI7OEJBQUUsQ0FBVTs7Ozs7Ozs7Ozs7d0ZBRWpEbUIsQ0FBRztnQkFDRkMsR0FBRyxFQUFFakIsTUFBTSxDQUFDTSxRQUFRLEVBQUVZLEtBQUssQ0FBQyxHQUFHLEVBQUVDLE1BQU0sQ0FBQyxHQUFHLEVBQUVDLEdBQUcsQ0FBQyxDQUFLLE1BQUVDLElBQUksQ0FBQyxDQUFRO2dCQUNyRUMsR0FBRyxFQUFFZixNQUFNOzs7Ozs7d0ZBRVpnQixDQUFFO2dCQUFDYixTQUFTLEVBQUViLGdFQUFZOzBCQUFHTyxLQUFLOzs7Ozs7d0ZBQ2xDb0IsQ0FBQztnQkFBQ2QsU0FBUyxFQUFFYixzRUFBa0I7MEJBQUdRLFdBQVc7Ozs7Ozs7Ozs7OztBQUdwRCxDQUFDO0FBQ0QsaUVBQWVGLFFBQVEsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYi8uL2NvbXBvbmVudHMvdG91ckNhcmQvaW5kZXguanN4PzE3NjUiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHN0eWxlcyBmcm9tIFwiLi9pbmRleC5tb2R1bGUuY3NzXCI7XHJcbmltcG9ydCBpbWFnZVVybEJ1aWxkZXIgZnJvbSBcIkBzYW5pdHkvaW1hZ2UtdXJsXCI7XHJcbmltcG9ydCBjbGllbnQgZnJvbSBcIi4uLy4uL2NsaWVudFwiO1xyXG5mdW5jdGlvbiB1cmxGb3Ioc291cmNlKSB7XHJcbiAgcmV0dXJuIGltYWdlVXJsQnVpbGRlcihjbGllbnQpLmltYWdlKHNvdXJjZSk7XHJcbn1cclxuZnVuY3Rpb24gdG91ckNhcmQoeyB0aXRsZSwgZGVzY3JpcHRpb24sIGNvdmVySW1nLCBpbWdBbHQsIG9uQ2xpY2sgfSkge1xyXG4gIHJldHVybiAoXHJcbiAgICA8ZGl2IGNsYXNzTmFtZT17c3R5bGVzLmNhcmR9IG9uQ2xpY2s9e29uQ2xpY2t9PlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT17c3R5bGVzLmNhcmRQaW5jaH0+PC9kaXY+XHJcbiAgICAgIDxkaXYgY2xhc3NOYW1lPXtzdHlsZXMuY2FyZE92ZXJsYXl9PlxyXG4gICAgICAgIDxoNiBjbGFzc05hbWU9e3N0eWxlcy5jb250ZW50RGV0YWlsc30+UmVhZCBtb3JlITwvaDY+XHJcbiAgICAgIDwvZGl2PlxyXG4gICAgICA8aW1nXHJcbiAgICAgICAgc3JjPXt1cmxGb3IoY292ZXJJbWcpLndpZHRoKDMyMCkuaGVpZ2h0KDIwMCkuZml0KFwibWF4XCIpLmF1dG8oXCJmb3JtYXRcIil9XHJcbiAgICAgICAgYWx0PXtpbWdBbHR9XHJcbiAgICAgIC8+XHJcbiAgICAgIDxoNCBjbGFzc05hbWU9e3N0eWxlcy50aXRsZX0+e3RpdGxlfTwvaDQ+XHJcbiAgICAgIDxwIGNsYXNzTmFtZT17c3R5bGVzLmRlc2NyaXB0aW9ufT57ZGVzY3JpcHRpb259PC9wPlxyXG4gICAgPC9kaXY+XHJcbiAgKTtcclxufVxyXG5leHBvcnQgZGVmYXVsdCB0b3VyQ2FyZDtcclxuIl0sIm5hbWVzIjpbInN0eWxlcyIsImltYWdlVXJsQnVpbGRlciIsImNsaWVudCIsInVybEZvciIsInNvdXJjZSIsImltYWdlIiwidG91ckNhcmQiLCJ0aXRsZSIsImRlc2NyaXB0aW9uIiwiY292ZXJJbWciLCJpbWdBbHQiLCJvbkNsaWNrIiwiZGl2IiwiY2xhc3NOYW1lIiwiY2FyZCIsImNhcmRQaW5jaCIsImNhcmRPdmVybGF5IiwiaDYiLCJjb250ZW50RGV0YWlscyIsImltZyIsInNyYyIsIndpZHRoIiwiaGVpZ2h0IiwiZml0IiwiYXV0byIsImFsdCIsImg0IiwicCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./components/tourCard/index.jsx\n");
-
-/***/ }),
-
-/***/ "./pages/index.js":
-/*!************************!*\
-  !*** ./pages/index.js ***!
-  \************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getServerSideProps\": () => (/* binding */ getServerSideProps),\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_banner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/banner */ \"./components/banner/index.jsx\");\n/* harmony import */ var _components_tourCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/tourCard */ \"./components/tourCard/index.jsx\");\n/* harmony import */ var _components_importantMsg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/importantMsg */ \"./components/importantMsg/index.jsx\");\n/* harmony import */ var groq__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! groq */ \"groq\");\n/* harmony import */ var groq__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(groq__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! next/router */ \"next/router\");\n/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _client__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../client */ \"./client.js\");\n\n\n\n\n\n\n\nconst Index = ({ post , banner , msg  })=>{\n    var ref6, ref1, ref2, ref3, ref4;\n    const bannerItem = (ref6 = banner[0]) === null || ref6 === void 0 ? void 0 : (ref1 = ref6.bannerImage) === null || ref1 === void 0 ? void 0 : (ref2 = ref1.asset) === null || ref2 === void 0 ? void 0 : ref2._ref;\n    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_5__.useRouter)();\n    return(/*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {\n        children: [\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_banner__WEBPACK_IMPORTED_MODULE_1__[\"default\"], {\n                background: bannerItem\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                lineNumber: 12,\n                columnNumber: 7\n            }, undefined),\n            msg.length ? /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_importantMsg__WEBPACK_IMPORTED_MODULE_3__[\"default\"], {\n                title: (ref3 = msg[0]) === null || ref3 === void 0 ? void 0 : ref3.title,\n                children: (ref4 = msg[0]) === null || ref4 === void 0 ? void 0 : ref4.text\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                lineNumber: 14,\n                columnNumber: 9\n            }, undefined) : null,\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h3\", {\n                className: \"homePage--sectionTitle\",\n                children: [\n                    \"Walking \",\n                    /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                        className: \"colored\",\n                        children: \"Tours\"\n                    }, void 0, false, {\n                        fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                        lineNumber: 17,\n                        columnNumber: 17\n                    }, undefined),\n                    \" We Offer\"\n                ]\n            }, void 0, true, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                lineNumber: 16,\n                columnNumber: 7\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                className: \"contentWrapper\",\n                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    className: \"cardsWrapper\",\n                    children: post === null || post === void 0 ? void 0 : post.map((card)=>{\n                        var ref, ref5;\n                        return(/*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(_components_tourCard__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n                            onClick: ()=>router.push(`/tours/${card.slug.current}`)\n                            ,\n                            coverImg: (ref = card.mainImage) === null || ref === void 0 ? void 0 : (ref5 = ref.asset) === null || ref5 === void 0 ? void 0 : ref5._ref,\n                            title: card.title,\n                            description: card.description[0].children[0].text\n                        }, card.title, false, {\n                            fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                            lineNumber: 23,\n                            columnNumber: 15\n                        }, undefined));\n                    })\n                }, void 0, false, {\n                    fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                    lineNumber: 20,\n                    columnNumber: 9\n                }, undefined)\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                lineNumber: 19,\n                columnNumber: 7\n            }, undefined),\n            /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"section\", {\n                className: \"meetingSection\",\n                children: /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                    className: \"contentWrapper\",\n                    children: [\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"h3\", {\n                            className: \"homePage--sectionTitle\",\n                            children: [\n                                \"Meeting \",\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"span\", {\n                                    className: \"colored\",\n                                    children: \"Point\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                                    lineNumber: 37,\n                                    columnNumber: 21\n                                }, undefined)\n                            ]\n                        }, void 0, true, {\n                            fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                            lineNumber: 36,\n                            columnNumber: 11\n                        }, undefined),\n                        /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                            className: \"meetingPoint\",\n                            children: [\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                    className: \"meetingPoint--picture\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                                    lineNumber: 40,\n                                    columnNumber: 13\n                                }, undefined),\n                                /*#__PURE__*/ (0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxDEV)(\"div\", {\n                                    className: \"meetingPoint--map\"\n                                }, void 0, false, {\n                                    fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                                    lineNumber: 41,\n                                    columnNumber: 13\n                                }, undefined)\n                            ]\n                        }, void 0, true, {\n                            fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                            lineNumber: 39,\n                            columnNumber: 11\n                        }, undefined)\n                    ]\n                }, void 0, true, {\n                    fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                    lineNumber: 35,\n                    columnNumber: 9\n                }, undefined)\n            }, void 0, false, {\n                fileName: \"C:\\\\Users\\\\O\\\\Desktop\\\\Pamokos\\\\NextJs\\\\Vilnius_Free_Tours\\\\Web\\\\pages\\\\index.js\",\n                lineNumber: 34,\n                columnNumber: 7\n            }, undefined)\n        ]\n    }, void 0, true));\n};\nasync function getServerSideProps(context) {\n    const query1 = `*[_type == \"tour-card\"]`;\n    const query2 = `*[_type == \"banner\"]`;\n    const query3 = `*[_type == \"ImpMsg\"]`;\n    const post = await _client__WEBPACK_IMPORTED_MODULE_6__[\"default\"].fetch(query1);\n    const banner = await _client__WEBPACK_IMPORTED_MODULE_6__[\"default\"].fetch(query2);\n    const msg = await _client__WEBPACK_IMPORTED_MODULE_6__[\"default\"].fetch(query3);\n    return {\n        props: {\n            post,\n            banner,\n            msg\n        }\n    };\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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OztvR0FFeENFLENBQUc7NEJBQUNGLFNBQVMsRUFBQyxDQUFjOzs0R0FDMUJFLENBQUc7b0NBQUNGLFNBQVMsRUFBQyxDQUF1Qjs7Ozs7OzRHQUNyQ0UsQ0FBRztvQ0FBQ0YsU0FBUyxFQUFDLENBQW1COzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBTTlDLENBQUM7QUFDTSxlQUFlYSxrQkFBa0IsQ0FBQ0MsT0FBTyxFQUFFLENBQUM7SUFDakQsS0FBSyxDQUFDQyxNQUFNLElBQUksdUJBQXVCO0lBQ3ZDLEtBQUssQ0FBQ0MsTUFBTSxJQUFJLG9CQUFvQjtJQUNwQyxLQUFLLENBQUNDLE1BQU0sSUFBSSxvQkFBb0I7SUFDcEMsS0FBSyxDQUFDL0IsSUFBSSxHQUFHLEtBQUssQ0FBQ0YscURBQVksQ0FBQytCLE1BQU07SUFDdEMsS0FBSyxDQUFDNUIsTUFBTSxHQUFHLEtBQUssQ0FBQ0gscURBQVksQ0FBQ2dDLE1BQU07SUFDeEMsS0FBSyxDQUFDNUIsR0FBRyxHQUFHLEtBQUssQ0FBQ0oscURBQVksQ0FBQ2lDLE1BQU07SUFDckMsTUFBTSxDQUFDLENBQUM7UUFDTkUsS0FBSyxFQUFFLENBQUM7WUFDTmpDLElBQUk7WUFDSkMsTUFBTTtZQUNOQyxHQUFHO1FBQ0wsQ0FBQztJQUNILENBQUM7QUFDSCxDQUFDO0FBRUQsaUVBQWVILEtBQUssRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3dlYi8uL3BhZ2VzL2luZGV4LmpzP2JlZTciXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IEJhbm5lciBmcm9tIFwiLi4vY29tcG9uZW50cy9iYW5uZXJcIjtcclxuaW1wb3J0IFRvdXJDYXJkIGZyb20gXCIuLi9jb21wb25lbnRzL3RvdXJDYXJkXCI7XHJcbmltcG9ydCBJbXBvcnRhbnRNc2cgZnJvbSBcIi4uL2NvbXBvbmVudHMvaW1wb3J0YW50TXNnXCI7XHJcbmltcG9ydCBncm9xIGZyb20gXCJncm9xXCI7XHJcbmltcG9ydCB7IHVzZVJvdXRlciB9IGZyb20gXCJuZXh0L3JvdXRlclwiO1xyXG5pbXBvcnQgY2xpZW50IGZyb20gXCIuLi9jbGllbnRcIjtcclxuY29uc3QgSW5kZXggPSAoeyBwb3N0LCBiYW5uZXIsIG1zZyB9KSA9PiB7XHJcbiAgY29uc3QgYmFubmVySXRlbSA9IGJhbm5lclswXT8uYmFubmVySW1hZ2U/LmFzc2V0Py5fcmVmO1xyXG4gIGNvbnN0IHJvdXRlciA9IHVzZVJvdXRlcigpO1xyXG4gIHJldHVybiAoXHJcbiAgICA8PlxyXG4gICAgICA8QmFubmVyIGJhY2tncm91bmQ9e2Jhbm5lckl0ZW19IC8+XHJcbiAgICAgIHttc2cubGVuZ3RoID8gKFxyXG4gICAgICAgIDxJbXBvcnRhbnRNc2cgdGl0bGU9e21zZ1swXT8udGl0bGV9IGNoaWxkcmVuPXttc2dbMF0/LnRleHR9IC8+XHJcbiAgICAgICkgOiBudWxsfVxyXG4gICAgICA8aDMgY2xhc3NOYW1lPVwiaG9tZVBhZ2UtLXNlY3Rpb25UaXRsZVwiPlxyXG4gICAgICAgIFdhbGtpbmcgPHNwYW4gY2xhc3NOYW1lPVwiY29sb3JlZFwiPlRvdXJzPC9zcGFuPiBXZSBPZmZlclxyXG4gICAgICA8L2gzPlxyXG4gICAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbnRlbnRXcmFwcGVyXCI+XHJcbiAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjYXJkc1dyYXBwZXJcIj5cclxuICAgICAgICAgIHtwb3N0Py5tYXAoKGNhcmQpID0+IHtcclxuICAgICAgICAgICAgcmV0dXJuIChcclxuICAgICAgICAgICAgICA8VG91ckNhcmRcclxuICAgICAgICAgICAgICAgIGtleT17Y2FyZC50aXRsZX1cclxuICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHJvdXRlci5wdXNoKGAvdG91cnMvJHtjYXJkLnNsdWcuY3VycmVudH1gKX1cclxuICAgICAgICAgICAgICAgIGNvdmVySW1nPXtjYXJkLm1haW5JbWFnZT8uYXNzZXQ/Ll9yZWZ9XHJcbiAgICAgICAgICAgICAgICB0aXRsZT17Y2FyZC50aXRsZX1cclxuICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uPXtjYXJkLmRlc2NyaXB0aW9uWzBdLmNoaWxkcmVuWzBdLnRleHR9XHJcbiAgICAgICAgICAgICAgLz5cclxuICAgICAgICAgICAgKTtcclxuICAgICAgICAgIH0pfVxyXG4gICAgICAgIDwvZGl2PlxyXG4gICAgICA8L2Rpdj5cclxuICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPVwibWVldGluZ1NlY3Rpb25cIj5cclxuICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImNvbnRlbnRXcmFwcGVyXCI+XHJcbiAgICAgICAgICA8aDMgY2xhc3NOYW1lPVwiaG9tZVBhZ2UtLXNlY3Rpb25UaXRsZVwiPlxyXG4gICAgICAgICAgICBNZWV0aW5nIDxzcGFuIGNsYXNzTmFtZT1cImNvbG9yZWRcIj5Qb2ludDwvc3Bhbj5cclxuICAgICAgICAgIDwvaDM+XHJcbiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1lZXRpbmdQb2ludFwiPlxyXG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1lZXRpbmdQb2ludC0tcGljdHVyZVwiPjwvZGl2PlxyXG4gICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cIm1lZXRpbmdQb2ludC0tbWFwXCI+PC9kaXY+XHJcbiAgICAgICAgICA8L2Rpdj5cclxuICAgICAgICA8L2Rpdj5cclxuICAgICAgPC9zZWN0aW9uPlxyXG4gICAgPC8+XHJcbiAgKTtcclxufTtcclxuZXhwb3J0IGFzeW5jIGZ1bmN0aW9uIGdldFNlcnZlclNpZGVQcm9wcyhjb250ZXh0KSB7XHJcbiAgY29uc3QgcXVlcnkxID0gYCpbX3R5cGUgPT0gXCJ0b3VyLWNhcmRcIl1gO1xyXG4gIGNvbnN0IHF1ZXJ5MiA9IGAqW190eXBlID09IFwiYmFubmVyXCJdYDtcclxuICBjb25zdCBxdWVyeTMgPSBgKltfdHlwZSA9PSBcIkltcE1zZ1wiXWA7XHJcbiAgY29uc3QgcG9zdCA9IGF3YWl0IGNsaWVudC5mZXRjaChxdWVyeTEpO1xyXG4gIGNvbnN0IGJhbm5lciA9IGF3YWl0IGNsaWVudC5mZXRjaChxdWVyeTIpO1xyXG4gIGNvbnN0IG1zZyA9IGF3YWl0IGNsaWVudC5mZXRjaChxdWVyeTMpO1xyXG4gIHJldHVybiB7XHJcbiAgICBwcm9wczoge1xyXG4gICAgICBwb3N0LFxyXG4gICAgICBiYW5uZXIsXHJcbiAgICAgIG1zZyxcclxuICAgIH0sXHJcbiAgfTtcclxufVxyXG5cclxuZXhwb3J0IGRlZmF1bHQgSW5kZXg7XHJcbiJdLCJuYW1lcyI6WyJCYW5uZXIiLCJUb3VyQ2FyZCIsIkltcG9ydGFudE1zZyIsImdyb3EiLCJ1c2VSb3V0ZXIiLCJjbGllbnQiLCJJbmRleCIsInBvc3QiLCJiYW5uZXIiLCJtc2ciLCJiYW5uZXJJdGVtIiwiYmFubmVySW1hZ2UiLCJhc3NldCIsIl9yZWYiLCJyb3V0ZXIiLCJiYWNrZ3JvdW5kIiwibGVuZ3RoIiwidGl0bGUiLCJjaGlsZHJlbiIsInRleHQiLCJoMyIsImNsYXNzTmFtZSIsInNwYW4iLCJkaXYiLCJtYXAiLCJjYXJkIiwib25DbGljayIsInB1c2giLCJzbHVnIiwiY3VycmVudCIsImNvdmVySW1nIiwibWFpbkltYWdlIiwiZGVzY3JpcHRpb24iLCJzZWN0aW9uIiwiZ2V0U2VydmVyU2lkZVByb3BzIiwiY29udGV4dCIsInF1ZXJ5MSIsInF1ZXJ5MiIsInF1ZXJ5MyIsImZldGNoIiwicHJvcHMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./pages/index.js\n");
-
-/***/ }),
-
-/***/ "@sanity/client":
-/*!*********************************!*\
-  !*** external "@sanity/client" ***!
-  \*********************************/
+/***/ 562:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("@sanity/client");
+module.exports = require("next/dist/server/denormalize-page-path.js");
 
 /***/ }),
 
-/***/ "@sanity/image-url":
-/*!************************************!*\
-  !*** external "@sanity/image-url" ***!
-  \************************************/
+/***/ 4014:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("@sanity/image-url");
+module.exports = require("next/dist/shared/lib/i18n/normalize-locale-path.js");
 
 /***/ }),
 
-/***/ "groq":
-/*!***********************!*\
-  !*** external "groq" ***!
-  \***********************/
+/***/ 8524:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("groq");
+module.exports = require("next/dist/shared/lib/is-plain-object.js");
 
 /***/ }),
 
-/***/ "next/router":
-/*!******************************!*\
-  !*** external "next/router" ***!
-  \******************************/
+/***/ 8020:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("next/router");
+module.exports = require("next/dist/shared/lib/mitt.js");
 
 /***/ }),
 
-/***/ "react/jsx-dev-runtime":
-/*!****************************************!*\
-  !*** external "react/jsx-dev-runtime" ***!
-  \****************************************/
+/***/ 4964:
 /***/ ((module) => {
 
 "use strict";
-module.exports = require("react/jsx-dev-runtime");
+module.exports = require("next/dist/shared/lib/router-context.js");
+
+/***/ }),
+
+/***/ 9565:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-route.js");
+
+/***/ }),
+
+/***/ 4365:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/get-middleware-regex.js");
+
+/***/ }),
+
+/***/ 1428:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
+
+/***/ }),
+
+/***/ 1292:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.js");
+
+/***/ }),
+
+/***/ 979:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
+
+/***/ }),
+
+/***/ 6052:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js");
+
+/***/ }),
+
+/***/ 4226:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
+
+/***/ }),
+
+/***/ 5052:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
+
+/***/ }),
+
+/***/ 9232:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("next/dist/shared/lib/utils.js");
+
+/***/ }),
+
+/***/ 6689:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("react");
+
+/***/ }),
+
+/***/ 997:
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("react/jsx-runtime");
 
 /***/ })
 
@@ -159,7 +446,7 @@ module.exports = require("react/jsx-dev-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("./pages/index.js"));
+var __webpack_exports__ = __webpack_require__.X(0, [730,664,762], () => (__webpack_exec__(3507)));
 module.exports = __webpack_exports__;
 
 })();
