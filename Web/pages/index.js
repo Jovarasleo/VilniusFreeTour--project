@@ -2,6 +2,7 @@ import Banner from "../components/banner";
 import Link from "next/link";
 import TourCard from "../components/tourCard";
 import ImportantMsg from "../components/importantMsg";
+import groq from "groq";
 import client from "../client";
 const Index = ({ tours, banner, msg }) => {
   const bannerItem = banner[0]?.bannerImage?.asset?._ref;
@@ -50,10 +51,10 @@ const Index = ({ tours, banner, msg }) => {
     </>
   );
 };
-export async function getServerSideProps() {
-  const query1 = `*[_type == "tour-card"]`;
-  const query2 = `*[_type == "banner"]`;
-  const query3 = `*[_type == "ImpMsg"]`;
+export async function getStaticProps() {
+  const query1 = groq`*[_type == "tour-card"]`;
+  const query2 = groq`*[_type == "banner"]`;
+  const query3 = groq`*[_type == "ImpMsg"]`;
   const tours = await client.fetch(query1);
   const banner = await client.fetch(query2);
   const msg = await client.fetch(query3);
