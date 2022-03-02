@@ -12,7 +12,7 @@ const Index = ({ tours, banner, msg }) => {
         <ImportantMsg title={msg[0]?.title} children={msg[0]?.text} />
       ) : null}
       <h3 className="homePage--sectionTitle">
-        Walking <span className="colored">Tours</span> We Offer
+        Walking <span className="colored">tours</span> We Offer
       </h3>
       <div className="contentWrapper">
         <div className="cardsWrapper">
