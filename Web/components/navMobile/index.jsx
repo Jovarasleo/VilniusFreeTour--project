@@ -1,7 +1,6 @@
 import styles from "./index.module.css";
 import Link from "next/link";
 function NavMobile({ toggle }) {
-  console.log(toggle);
   return (
     <div className={styles.navMobile}>
       <ul className={styles.navLinks}>

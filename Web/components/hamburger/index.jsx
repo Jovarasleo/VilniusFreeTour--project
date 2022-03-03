@@ -1,7 +1,6 @@
 import styles from "./index.module.css";
 
 function Hamburger({ onClick, toggle }) {
-  console.log(toggle);
   return (
     <div
       className={

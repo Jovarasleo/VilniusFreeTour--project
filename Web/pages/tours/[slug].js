@@ -1,10 +1,24 @@
 import client from "../../client";
-
+import imageUrlBuilder from "@sanity/image-url";
+function urlFor(source) {
+  return imageUrlBuilder(client).image(source);
+}
 const Tour = ({ post }) => {
   return (
-    <article>
-      <h1>{post?.title}</h1>
-    </article>
+    <section>
+      {post?.gallery?.map((galleryImg) => {
+        return (
+          <img
+            key={galleryImg._key}
+            src={urlFor(galleryImg)
+              .width(320)
+              .height(200)
+              .fit("max")
+              .auto("format")}
+          />
+        );
+      })}
+    </section>
   );
 };
 

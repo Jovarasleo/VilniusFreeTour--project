@@ -5,7 +5,6 @@ import ImportantMsg from "../components/importantMsg";
 import client from "../client";
 const Index = ({ tours, banner, msg }) => {
   const bannerItem = banner[0]?.bannerImage?.asset?._ref;
-  console.log(tours);
   return (
     <>
       <Banner background={bannerItem} />

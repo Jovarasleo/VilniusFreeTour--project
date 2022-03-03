@@ -1,4 +1,4 @@
-import logo from "../../images/logo.png";
+import logo from "./Undiscovered/logo.png";
 import Image from "next/image";
 import NavDesktop from "../navDesktop";
 import NavMobile from "../navMobile";
