@@ -5,6 +5,7 @@ import ImportantMsg from "../components/importantMsg";
 import client from "../client";
 const Index = ({ tours, banner, msg }) => {
   const bannerItem = banner[0]?.bannerImage?.asset?._ref;
+  console.log(tours);
   return (
     <>
       <Banner background={bannerItem} />
@@ -25,10 +26,10 @@ const Index = ({ tours, banner, msg }) => {
               >
                 <a>
                   <TourCard
-                    key={card.title}
-                    coverImg={card.mainImage?.asset?._ref}
-                    title={card.title}
-                    description={card.description[0].children[0].text}
+                    key={card?.title}
+                    coverImg={card?.mainImage?.asset?._ref}
+                    title={card?.title}
+                    description={card?.description}
                   />
                 </a>
               </Link>
@@ -43,7 +44,9 @@ const Index = ({ tours, banner, msg }) => {
           </h3>
           <div className="meetingPoint">
             <div className="meetingPoint--picture"></div>
-            <div className="meetingPoint--map"></div>
+            <div className="meetingPoint--map">
+              <div id="google-map" />
+            </div>
           </div>
         </div>
       </section>
@@ -51,7 +54,7 @@ const Index = ({ tours, banner, msg }) => {
   );
 };
 export async function getStaticProps() {
-  const query1 = `*[_type == "tour-card"]`;
+  const query1 = `*[_type == "tour-card"]{title, description, mainImage, slug}`;
   const query2 = `*[_type == "banner"]`;
   const query3 = `*[_type == "ImpMsg"]`;
   const tours = await client.fetch(query1);
