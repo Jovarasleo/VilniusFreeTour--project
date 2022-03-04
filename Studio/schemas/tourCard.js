@@ -18,12 +18,6 @@ export default {
       },
     },
     {
-      name: "author",
-      title: "Author",
-      type: "reference",
-      to: { type: "author" },
-    },
-    {
       name: "mainImage",
       title: "Main image",
       type: "image",
@@ -32,44 +26,63 @@ export default {
       },
     },
     {
-      name: "galery",
-      title: "Galery",
-      type: "array",
-      of: [
-        {
-          type: "image",
-        },
-      ],
-    },
-    {
-      name: "categories",
-      title: "Categories",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
-    },
-    {
       name: "description",
       title: "Description",
-      type: "blockContent",
+      type: "text",
     },
     {
-      name: "body",
-      title: "Body",
-      type: "blockContent",
+      name: "page",
+      title: "Page",
+      type: "document",
+      fields: [
+        {
+          name: "title",
+          title: "Title",
+          type: "string",
+        },
+        {
+          name: "hTag",
+          title: "H Tag",
+          type: "string",
+        },
+        {
+          name: "highLights",
+          title: "High lights",
+          type: "array",
+          of: [
+            {
+              type: "string",
+            },
+          ],
+        },
+        {
+          name: "description",
+          title: "Description",
+          type: "text",
+        },
+        {
+          name: "gallery",
+          title: "Gallery",
+          type: "array",
+          of: [
+            {
+              type: "image",
+            },
+          ],
+        },
+        {
+          name: "galleryMsg",
+          title: "GalleryMsg",
+          type: "text",
+        },
+      ],
     },
   ],
 
   preview: {
     select: {
       title: "title",
-      author: "author.name",
       media: "mainImage",
-    },
-    prepare(selection) {
-      const { author } = selection;
-      return Object.assign({}, selection, {
-        subtitle: author && `by ${author}`,
-      });
     },
   },
 };
