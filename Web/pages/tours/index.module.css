@@ -1,0 +1,137 @@
+.singleTourWrapper {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+.tour {
+  border: 20px solid var(--electricBlue);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: var(--white);
+  padding: 15px;
+}
+.icon {
+  font-size: 80px;
+  color: var(--primaryTheme);
+}
+.iconWrapper {
+  margin: 0 auto;
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--electricBlue);
+}
+.thumbsUpIcon {
+  font-size: 24px;
+  margin: 40px;
+  color: var(--white);
+  margin: 0 auto;
+
+  padding: 0px;
+}
+.gallery {
+  border: 20px solid var(--dark400);
+  flex: 2;
+  background-color: var(--dark400);
+  display: flex;
+  flex-direction: column;
+}
+.innerGallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.gallery img {
+  box-sizing: border-box;
+  object-fit: cover;
+  height: 250px;
+  object-position: 0px 60%;
+  width: 100%;
+  transition-duration: 0.3s;
+}
+.imgOverlay:hover {
+  opacity: 1;
+}
+.imgContainer:hover img {
+  transform: scale(1.2);
+}
+.imgContainer {
+  overflow: hidden;
+  width: calc(50% - 10px);
+  height: 250px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.eyeIcon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--dark100);
+  font-size: 40px;
+}
+.imgOverlay {
+  cursor: pointer;
+  opacity: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  transition: opacity 0.4s;
+}
+.galleryMessage {
+  box-sizing: border-box;
+  padding: 30px;
+  border-top: 20px solid var(--dark400);
+  background-color: var(--boneWhite);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.galleryMessage p {
+  margin-bottom: 30px;
+}
+.singleTourThemeWrapper {
+  background-color: var(--dark400);
+  flex: 1;
+}
+.singleTourTitle {
+  margin: 0 auto;
+  font-size: 40px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  padding: 20px 0px;
+}
+.singleTourHTag {
+  font-size: 14px;
+}
+.list {
+  margin: 20px 0px;
+  padding: 0 15px;
+  font-size: 14px;
+}
+@media only screen and (max-width: 1000px) {
+  .singleTourWrapper {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .imgContainer {
+    width: 100%;
+  }
+}

@@ -5,7 +5,9 @@
   --secondaryOverlay: #995a5aa8;
   --white: #ffffff;
   --boneWhite: rgb(240, 240, 240);
+  --electricBlue: rgb(197, 100, 87);
   --dark500: rgb(36, 36, 36);
+  --dark400: rgb(48, 48, 48);
   --dark300: rgb(77, 77, 77);
   --dark100: rgb(187, 187, 187);
 }
@@ -24,6 +26,7 @@ a:active {
 .colored {
   color: var(--primaryTheme);
 }
+
 #__next {
   min-height: 100vh;
   display: flex;
