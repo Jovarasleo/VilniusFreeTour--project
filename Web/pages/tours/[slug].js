@@ -44,22 +44,27 @@ const Tour = ({ tour }) => {
       }
     });
   };
-  const [width, setWidth] = useState(window.innerWidth);
-  const updateDimensions = () => {
-    setWidth(window.innerWidth);
-  };
+  const [width, setWidth] = useState(null);
+
   const [scrollPosition, setPosition] = useState(0);
   useEffect(() => {
-    window.addEventListener("resize", updateDimensions);
-    function updatePosition() {
-      setPosition(window.pageYOffset);
+    const updateDimensions = () => {
+      setWidth(window.innerWidth);
+    };
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", updateDimensions);
+
+      function updatePosition() {
+        setPosition(window.pageYOffset);
+      }
+      window.addEventListener("scroll", updatePosition);
+
+      updatePosition();
+      return (
+        () => window.removeEventListener("scroll", updatePosition),
+        () => window.removeEventListener("resize", updateDimensions)
+      );
     }
-    window.addEventListener("scroll", updatePosition);
-    updatePosition();
-    return (
-      () => window.removeEventListener("scroll", updatePosition),
-      () => window.removeEventListener("resize", updateDimensions)
-    );
   }, []);
   const GalleryApp = ({ id }) => {
     return (
