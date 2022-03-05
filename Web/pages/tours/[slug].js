@@ -21,7 +21,12 @@ const Tour = ({ tour }) => {
 
   const tourContent = tour?.page;
   const galleryArray = tourContent?.gallery;
-  const imgForwards = () => {
+  const stopPropagation = (event) => {
+    event.stopPropagation();
+    toggleGallery(!gallery);
+  };
+  const imgForwards = (e) => {
+    e.stopPropagation();
     galleryArray?.map((item, index) => {
       let newIndex = index;
       if (item._key === imgId) {
@@ -32,7 +37,8 @@ const Tour = ({ tour }) => {
       }
     });
   };
-  const imgBackwards = () => {
+  const imgBackwards = (e) => {
+    e.stopPropagation();
     galleryArray?.map((item, index) => {
       let newIndex = index;
       if (item._key === imgId) {
@@ -45,27 +51,35 @@ const Tour = ({ tour }) => {
   };
   const GalleryApp = ({ id }) => {
     return (
-      <div className={styles.galleryImgBig}>
+      <div
+        className={styles.galleryImgBig}
+        onClick={(e) => toggleGallery(!gallery)}
+      >
         <div className={styles.galleryImgWrapper}>
-          <ImArrowRight
-            className={styles.arrowRight}
-            onClick={() => imgForwards()}
-          />
+          <div
+            className={styles.goBackwardsWrapper}
+            onClick={(e) => imgBackwards(e)}
+          >
+            <ImArrowLeft className={styles.arrowLeft} />
+          </div>
+
           {tourContent?.gallery?.map((imgFile) => {
             if (imgFile._key === id) {
               return (
                 <img
                   key={imgFile._key}
                   src={urlFor(imgFile).format("webp")}
-                  onClick={() => toggleGallery(!gallery)}
+                  onClick={(e) => e.stopPropagation()}
                 />
               );
             }
           })}
-          <ImArrowLeft
-            className={styles.arrowLeft}
-            onClick={() => imgBackwards()}
-          />
+          <div
+            className={styles.goForwardWrapper}
+            onClick={(e) => imgForwards(e)}
+          >
+            <ImArrowRight className={styles.arrowRight} />
+          </div>
         </div>
       </div>
     );
