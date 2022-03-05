@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
 import { FaMapSigns } from "@react-icons/all-files/fa/FaMapSigns";
 import { FaThumbsUp } from "@react-icons/all-files/fa/FaThumbsUp";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ImArrowRight } from "@react-icons/all-files/im/ImArrowRight";
 import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
 function urlFor(source) {
@@ -18,13 +18,8 @@ const Tour = ({ tour }) => {
     toggleGallery(!gallery);
     setImgId(id);
   };
-
   const tourContent = tour?.page;
   const galleryArray = tourContent?.gallery;
-  const stopPropagation = (event) => {
-    event.stopPropagation();
-    toggleGallery(!gallery);
-  };
   const imgForwards = (e) => {
     e.stopPropagation();
     galleryArray?.map((item, index) => {
@@ -49,13 +44,35 @@ const Tour = ({ tour }) => {
       }
     });
   };
+  const [width, setWidth] = useState(window.innerWidth);
+  const updateDimensions = () => {
+    setWidth(window.innerWidth);
+  };
+  const [scrollPosition, setPosition] = useState(0);
+  useEffect(() => {
+    window.addEventListener("resize", updateDimensions);
+    function updatePosition() {
+      setPosition(window.pageYOffset);
+    }
+    window.addEventListener("scroll", updatePosition);
+    updatePosition();
+    return (
+      () => window.removeEventListener("scroll", updatePosition),
+      () => window.removeEventListener("resize", updateDimensions)
+    );
+  }, []);
   const GalleryApp = ({ id }) => {
     return (
       <div
         className={styles.galleryImgBig}
-        onClick={(e) => toggleGallery(!gallery)}
+        onClick={() => toggleGallery(!gallery)}
       >
-        <div className={styles.galleryImgWrapper}>
+        <div
+          className={styles.galleryImgWrapper}
+          style={
+            width < 640 ? { top: `calc(25% + ${scrollPosition}px)` } : null
+          }
+        >
           <div
             className={styles.goBackwardsWrapper}
             onClick={(e) => imgBackwards(e)}
@@ -87,7 +104,10 @@ const Tour = ({ tour }) => {
   return (
     <>
       {tourContent ? (
-        <div className={styles.singleTourThemeWrapper}>
+        <div
+          className={styles.singleTourThemeWrapper}
+          // onScroll={console.log(width)}
+        >
           <div className={styles.singleTourWrapper}>
             <section className={styles.tour}>
               <FaMapSigns className={styles.icon} />
