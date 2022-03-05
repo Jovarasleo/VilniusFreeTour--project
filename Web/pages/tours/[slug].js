@@ -53,7 +53,7 @@ const Tour = ({ tour }) => {
     };
     if (typeof window !== "undefined") {
       window.addEventListener("resize", updateDimensions);
-
+      updateDimensions();
       function updatePosition() {
         setPosition(window.pageYOffset);
       }
