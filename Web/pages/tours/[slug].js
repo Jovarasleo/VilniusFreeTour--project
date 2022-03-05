@@ -5,13 +5,71 @@ import styles from "./index.module.css";
 import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
 import { FaMapSigns } from "@react-icons/all-files/fa/FaMapSigns";
 import { FaThumbsUp } from "@react-icons/all-files/fa/FaThumbsUp";
-// import { BsFillEyeFill } from "react-icons/bs";
-
+import { useState } from "react";
+import { ImArrowRight } from "@react-icons/all-files/im/ImArrowRight";
+import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
 const Tour = ({ tour }) => {
+  const [gallery, toggleGallery] = useState(false);
+  const [imgId, setImgId] = useState("");
+  const openGallery = (id) => {
+    toggleGallery(!gallery);
+    setImgId(id);
+  };
+
   const tourContent = tour?.page;
+  const galleryArray = tourContent?.gallery;
+  const imgForwards = () => {
+    galleryArray?.map((item, index) => {
+      let newIndex = index;
+      if (item._key === imgId) {
+        if (index === galleryArray.length - 1) {
+          newIndex = -1;
+        }
+        setImgId(galleryArray[newIndex + 1]?._key);
+      }
+    });
+  };
+  const imgBackwards = () => {
+    galleryArray?.map((item, index) => {
+      let newIndex = index;
+      if (item._key === imgId) {
+        if (index === 0) {
+          newIndex = galleryArray.length;
+        }
+        setImgId(galleryArray[newIndex - 1]?._key);
+      }
+    });
+  };
+  const GalleryApp = ({ id }) => {
+    return (
+      <div className={styles.galleryImgBig}>
+        <div className={styles.galleryImgWrapper}>
+          <ImArrowRight
+            className={styles.arrowRight}
+            onClick={() => imgForwards()}
+          />
+          {tourContent?.gallery?.map((imgFile) => {
+            if (imgFile._key === id) {
+              return (
+                <img
+                  key={imgFile._key}
+                  src={urlFor(imgFile).format("webp")}
+                  onClick={() => toggleGallery(!gallery)}
+                />
+              );
+            }
+          })}
+          <ImArrowLeft
+            className={styles.arrowLeft}
+            onClick={() => imgBackwards()}
+          />
+        </div>
+      </div>
+    );
+  };
   return (
     <>
       {tourContent ? (
@@ -32,7 +90,11 @@ const Tour = ({ tour }) => {
               <div className={styles.innerGallery}>
                 {tourContent?.gallery?.slice(0, 4).map((galleryImg) => {
                   return (
-                    <div className={styles.imgContainer} key={galleryImg._key}>
+                    <div
+                      className={styles.imgContainer}
+                      key={galleryImg._key}
+                      onClick={() => openGallery(galleryImg._key)}
+                    >
                       <img src={urlFor(galleryImg).format("webp")} />
                       <div className={styles.imgOverlay}>
                         <BsFillEyeFill className={styles.eyeIcon} />
@@ -49,6 +111,7 @@ const Tour = ({ tour }) => {
               </div>
             </section>
           </div>
+          {gallery ? <GalleryApp id={imgId} /> : null}
         </div>
       ) : null}
     </>
@@ -78,6 +141,7 @@ export async function getStaticProps(context) {
     props: {
       tour,
     },
+    revalidate: 5,
   };
 }
 
