@@ -75,7 +75,7 @@ const Tour = ({ tour }) => {
         <div
           className={styles.galleryImgWrapper}
           style={
-            width < 640 ? { top: `calc(25% + ${scrollPosition}px)` } : null
+            width < 640 ? { top: `calc(11% + ${scrollPosition}px)` } : null
           }
         >
           <div

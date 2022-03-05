@@ -105,7 +105,7 @@
   background-color: var(--dark500);
   border-radius: 50%;
   padding: 10px;
-  opacity: 0.5;
+  opacity: 0.3;
   transition: opacity 0.3s;
 }
 .arrowLeft {
@@ -119,23 +119,31 @@
   background-color: var(--dark500);
   border-radius: 50%;
   padding: 10px;
-  opacity: 0.5;
+  opacity: 0.3;
   transition: opacity 0.3s;
 }
 .goBackwardsWrapper {
   position: absolute;
-  left: 0;
+  left: 10px;
   width: 50%;
   height: 100%;
   z-index: 5;
+  margin-top: 40px;
+}
+.goBackwardsWrapper:hover .arrowLeft {
+  opacity: 1;
+}
+.goForwardWrapper:hover .arrowRight {
+  opacity: 1;
 }
 .goForwardWrapper {
   position: absolute;
   margin-left: auto;
-  right: 0;
+  right: 10px;
   width: 50%;
   height: 100%;
   z-index: 5;
+  margin-top: 40px;
 }
 .arrowLeft:hover {
   opacity: 1;
@@ -168,14 +176,14 @@
   border-radius: 15px;
   box-sizing: border-box;
   position: absolute;
-  width: auto;
   top: 50%;
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 600px;
   height: auto;
-  left: 50%;
+  left: calc(50% - 40px);
   transform: translate(-50%, -50%);
   z-index: 2;
+  margin: 40px;
 }
 .galleryMessage {
   box-sizing: border-box;
