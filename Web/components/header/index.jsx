@@ -4,6 +4,7 @@ import NavDesktop from "../navDesktop";
 import NavMobile from "../navMobile";
 import Hamburger from "../hamburger";
 import { useState, useCallback, useEffect } from "react";
+import Link from "next/dist/client/link";
 import styles from "./index.module.css";
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
@@ -41,7 +42,9 @@ function Header() {
   return (
     <div className={styles.nav}>
       <div className={styles.navWrapper}>
-        <Image src={logo} alt="me" width="94" height="72" />
+        <Link href="/">
+          <Image src={logo} alt="me" width="94" height="72" />
+        </Link>
         {isBreakpoint ? (
           <Hamburger onClick={() => setToggle(!toggle)} toggle={toggle} />
         ) : (

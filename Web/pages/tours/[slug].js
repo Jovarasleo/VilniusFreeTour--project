@@ -5,7 +5,8 @@ import styles from "./index.module.css";
 import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
 import { FaMapSigns } from "@react-icons/all-files/fa/FaMapSigns";
 import { FaThumbsUp } from "@react-icons/all-files/fa/FaThumbsUp";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import { ImArrowRight } from "@react-icons/all-files/im/ImArrowRight";
 import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
 function urlFor(source) {
@@ -45,9 +46,9 @@ const Tour = ({ tour }) => {
     });
   };
   const [width, setWidth] = useState(null);
-
   const [scrollPosition, setPosition] = useState(0);
-  useEffect(() => {
+
+  useIsomorphicLayoutEffect(() => {
     const updateDimensions = () => {
       setWidth(window.innerWidth);
     };
