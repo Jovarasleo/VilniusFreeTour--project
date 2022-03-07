@@ -65,10 +65,20 @@ h3 {
 }
 .meetingPoint div {
   border-radius: 15px;
-  height: 400px;
-  width: 100%;
   max-width: 500px;
-  background-color: var(--white);
+}
+.meetingPoint--picture {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+}
+.meetingPoint--picture img {
+  border-radius: 15px;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 @media only screen and (max-width: 1000px) {
   .cardsWrapper {
@@ -81,5 +91,22 @@ h3 {
 @media only screen and (max-width: 768px) {
   .cardsWrapper {
     grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .meetingPoint {
+    margin: 0 10px 50px;
+  }
+  .meetingPoint--picture {
+    height: auto;
+  }
+  .meetingPoint div {
+    max-width: 320px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .meetingPoint div {
+    max-width: 260px;
+    max-height: 260px;
   }
 }

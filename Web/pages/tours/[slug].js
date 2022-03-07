@@ -5,7 +5,6 @@ import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
 import { FaMapSigns } from "@react-icons/all-files/fa/FaMapSigns";
 import { FaThumbsUp } from "@react-icons/all-files/fa/FaThumbsUp";
 import { useState } from "react";
-import useIsomorphicLayoutEffect from "use-isomorphic-layout-effect";
 import { ImArrowRight } from "@react-icons/all-files/im/ImArrowRight";
 import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
 function urlFor(source) {
@@ -44,28 +43,6 @@ const Tour = ({ tour }) => {
       }
     });
   };
-  const [width, setWidth] = useState(null);
-  const [scrollPosition, setPosition] = useState(0);
-
-  useIsomorphicLayoutEffect(() => {
-    const updateDimensions = () => {
-      setWidth(window.innerWidth);
-    };
-    if (typeof window !== "undefined") {
-      window.addEventListener("resize", updateDimensions);
-      updateDimensions();
-      function updatePosition() {
-        setPosition(window.pageYOffset);
-      }
-      window.addEventListener("scroll", updatePosition);
-
-      updatePosition();
-      return (
-        () => window.removeEventListener("scroll", updatePosition),
-        () => window.removeEventListener("resize", updateDimensions)
-      );
-    }
-  }, []);
   const GalleryApp = ({ id }) => {
     return (
       <div
@@ -104,10 +81,7 @@ const Tour = ({ tour }) => {
   return (
     <>
       {tourContent ? (
-        <div
-          className={styles.singleTourThemeWrapper}
-          // onScroll={console.log(width)}
-        >
+        <div className={styles.singleTourThemeWrapper}>
           <div className={styles.singleTourWrapper}>
             <section className={styles.tour}>
               <FaMapSigns className={styles.icon} />

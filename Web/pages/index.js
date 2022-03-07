@@ -3,8 +3,14 @@ import Link from "next/link";
 import TourCard from "../components/tourCard";
 import ImportantMsg from "../components/importantMsg";
 import client from "../client";
-const Index = ({ tours, banner, msg }) => {
+import GMaps from "../components/googleMap";
+import imageUrlBuilder from "@sanity/image-url";
+function urlFor(source) {
+  return imageUrlBuilder(client).image(source);
+}
+const Index = ({ tours, banner, msg, meetingPoint }) => {
   const bannerItem = banner[0]?.bannerImage?.asset?._ref;
+  const meetingPointImg = meetingPoint[0]?.meetingPointImage?.asset?._ref;
   return (
     <>
       <Banner background={bannerItem} />
@@ -42,10 +48,10 @@ const Index = ({ tours, banner, msg }) => {
             Meeting <span className="colored">Point</span>
           </h3>
           <div className="meetingPoint">
-            <div className="meetingPoint--picture"></div>
-            <div className="meetingPoint--map">
-              <div id="google-map" />
+            <div className="meetingPoint--picture">
+              <img src={urlFor(meetingPointImg)} alt="" />
             </div>
+            <GMaps />
           </div>
         </div>
       </section>
@@ -56,14 +62,17 @@ export async function getStaticProps() {
   const query1 = `*[_type == "tour-card"]{title, description, mainImage, slug}`;
   const query2 = `*[_type == "banner"]`;
   const query3 = `*[_type == "ImpMsg"]`;
+  const query4 = `*[_type == "meetingPoint"]`;
   const tours = await client.fetch(query1);
   const banner = await client.fetch(query2);
   const msg = await client.fetch(query3);
+  const meetingPoint = await client.fetch(query4);
   return {
     props: {
       tours,
       banner,
       msg,
+      meetingPoint,
     },
   };
 }
