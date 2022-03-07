@@ -1,12 +1,13 @@
+import { useEffect, useState } from "react";
 import client from "../../client";
 import imageUrlBuilder from "@sanity/image-url";
 import styles from "./index.module.css";
 import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
 import { FaMapSigns } from "@react-icons/all-files/fa/FaMapSigns";
 import { FaThumbsUp } from "@react-icons/all-files/fa/FaThumbsUp";
-import { useState } from "react";
 import { ImArrowRight } from "@react-icons/all-files/im/ImArrowRight";
 import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
+
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
@@ -43,6 +44,13 @@ const Tour = ({ tour }) => {
       }
     });
   };
+  useEffect(() => {
+    if (typeof window != "undefined" && window.document) {
+      if (gallery) {
+        document.body.style.overflow = "hidden";
+      } else document.body.style.overflow = "";
+    }
+  });
   const GalleryApp = ({ id }) => {
     return (
       <div

@@ -122,28 +122,32 @@
   opacity: 0.3;
   transition: opacity 0.3s;
 }
-.goBackwardsWrapper {
-  position: absolute;
-  left: 10px;
-  width: 50%;
-  height: 100%;
-  z-index: 5;
-  margin-top: 40px;
-}
 .goBackwardsWrapper:hover .arrowLeft {
   opacity: 1;
 }
 .goForwardWrapper:hover .arrowRight {
   opacity: 1;
 }
+.goBackwardsWrapper:active .arrowLeft {
+  opacity: 1;
+}
+.goForwardWrapper:active .arrowRight {
+  opacity: 1;
+}
+.goBackwardsWrapper {
+  position: absolute;
+  left: 5%;
+  width: 35%;
+  height: 100%;
+  z-index: 5;
+}
 .goForwardWrapper {
   position: absolute;
   margin-left: auto;
-  right: 10px;
-  width: 50%;
+  right: 5%;
+  width: 35%;
   height: 100%;
   z-index: 5;
-  margin-top: 40px;
 }
 .arrowLeft:hover {
   opacity: 1;
@@ -157,19 +161,18 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
   height: 400px;
 }
 .galleryImgBig {
+  z-index: 10;
   overflow: hidden;
   background-color: rgba(32, 32, 32, 0.801);
-  width: 100%;
-  /* height: calc(120vh + 100px); */
-  height: 120vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
   box-sizing: border-box;
 }
 .galleryImgBig img {
@@ -179,13 +182,12 @@
   box-sizing: border-box;
   position: absolute;
   top: 50%;
-  width: calc(100% - 50px);
+  width: calc(100% - 20px);
   max-width: 600px;
   height: auto;
-  left: calc(50% - 40px);
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  margin: 40px;
 }
 .galleryMessage {
   box-sizing: border-box;
@@ -229,14 +231,5 @@
 @media only screen and (max-width: 640px) {
   .imgContainer {
     width: 100%;
-  }
-  .galleryImgBig {
-    position: fixed;
-  }
-  .galleryImgBig img {
-    position: fixed;
-  }
-  .galleryImgBig img {
-    max-height: 80vh;
   }
 }

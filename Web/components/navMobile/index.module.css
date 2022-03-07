@@ -2,8 +2,7 @@
   position: absolute;
   right: 0;
   top: 0px;
-  background-color: var(--boneWhite);
-  box-shadow: inset 3px 3px 10px -2px var(--dark500);
+  background-color: var(--dark300);
   width: 100%;
   transition: transform 1s ease-in-out;
   transform: translateY(90px);
@@ -17,7 +16,7 @@
 }
 .navLinks li a {
   text-decoration: none;
-  color: var(--dark500);
+  color: var(--boneWhite);
   font-size: 20px;
   margin-left: 20px;
   font-weight: 400;
