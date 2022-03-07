@@ -43,7 +43,9 @@ function Header() {
     <div className={styles.nav}>
       <div className={styles.navWrapper}>
         <Link href="/">
-          <Image src={logo} alt="me" width="94" height="72" />
+          <a>
+            <Image src={logo} alt="me" width="94" height="72" />
+          </a>
         </Link>
         {isBreakpoint ? (
           <Hamburger onClick={() => setToggle(!toggle)} toggle={toggle} />

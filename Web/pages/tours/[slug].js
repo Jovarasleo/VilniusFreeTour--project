@@ -1,5 +1,4 @@
 import client from "../../client";
-// import React from "react";
 import imageUrlBuilder from "@sanity/image-url";
 import styles from "./index.module.css";
 import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
@@ -73,12 +72,7 @@ const Tour = ({ tour }) => {
         className={styles.galleryImgBig}
         onClick={() => toggleGallery(!gallery)}
       >
-        <div
-          className={styles.galleryImgWrapper}
-          style={
-            width < 640 ? { top: `calc(11% + ${scrollPosition}px)` } : null
-          }
-        >
+        <div className={styles.galleryImgWrapper}>
           <div
             className={styles.goBackwardsWrapper}
             onClick={(e) => imgBackwards(e)}
