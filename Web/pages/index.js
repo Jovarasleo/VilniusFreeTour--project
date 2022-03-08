@@ -1,16 +1,22 @@
 import Banner from "../components/banner";
+import { useContext, useEffect } from "react";
 import Link from "next/link";
 import TourCard from "../components/tourCard";
 import ImportantMsg from "../components/importantMsg";
 import client from "../client";
 import GMaps from "../components/googleMap";
 import imageUrlBuilder from "@sanity/image-url";
+import ToursContext from "../context/ToursContext";
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
 const Index = ({ tours, banner, msg, meetingPoint }) => {
+  const { setTour } = useContext(ToursContext);
   const bannerItem = banner[0]?.bannerImage?.asset?._ref;
   const meetingPointImg = meetingPoint[0]?.meetingPointImage?.asset?._ref;
+  useEffect(() => {
+    setTour(tours);
+  }, [tours]);
   return (
     <>
       <Banner background={bannerItem} />

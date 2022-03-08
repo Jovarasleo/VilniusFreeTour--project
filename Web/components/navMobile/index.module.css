@@ -7,6 +7,19 @@
   transition: transform 1s ease-in-out;
   transform: translateY(90px);
 }
+.navMobile button {
+  background: inherit;
+  border: none;
+  position: relative;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.navMobile button svg {
+  color: var(--boneWhite);
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 0;
+}
 .navLinks {
   margin-top: 10px;
 }

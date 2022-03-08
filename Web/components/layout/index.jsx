@@ -1,10 +1,10 @@
 import Header from "../header";
 import Footer from "../footer";
 import styles from "./index.module.css";
-function Layout({ children }) {
+function Layout({ children, tours }) {
   return (
     <>
-      <Header />
+      <Header tours={tours} />
       <main className={styles.main}>{children}</main>
       <Footer />
     </>

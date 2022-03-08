@@ -2,7 +2,7 @@ import styles from "./index.module.css";
 
 function Hamburger({ onClick, toggle }) {
   return (
-    <div
+    <button
       className={
         toggle ? styles.hamburger.concat(" ", styles.marked) : styles.hamburger
       }
@@ -11,7 +11,7 @@ function Hamburger({ onClick, toggle }) {
       <div></div>
       <div></div>
       <div></div>
-    </div>
+    </button>
   );
 }
 export default Hamburger;

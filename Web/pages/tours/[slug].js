@@ -58,12 +58,14 @@ const Tour = ({ tour }) => {
         onClick={() => toggleGallery(!gallery)}
       >
         <div className={styles.galleryImgWrapper}>
-          <div
-            className={styles.goBackwardsWrapper}
+          <button
+            className={styles.goBackwards.concat(" ", styles.arrowWrapper)}
             onClick={(e) => imgBackwards(e)}
           >
-            <ImArrowLeft className={styles.arrowLeft} />
-          </div>
+            <ImArrowLeft
+              className={styles.arrowLeft.concat(" ", styles.arrow)}
+            />
+          </button>
 
           {tourContent?.gallery?.map((imgFile) => {
             if (imgFile._key === id) {
@@ -76,12 +78,14 @@ const Tour = ({ tour }) => {
               );
             }
           })}
-          <div
-            className={styles.goForwardWrapper}
+          <button
+            className={styles.goForward.concat(" ", styles.arrowWrapper)}
             onClick={(e) => imgForwards(e)}
           >
-            <ImArrowRight className={styles.arrowRight} />
-          </div>
+            <ImArrowRight
+              className={styles.arrowRight.concat(" ", styles.arrow)}
+            />
+          </button>
         </div>
       </div>
     );

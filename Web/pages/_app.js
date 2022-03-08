@@ -1,11 +1,14 @@
 import Layout from "../components/layout";
+import { TourProvider } from "../context/ToursContext";
 import "./index.css";
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <TourProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </TourProvider>
     </>
   );
 }

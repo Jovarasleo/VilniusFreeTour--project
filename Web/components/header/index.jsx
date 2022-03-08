@@ -3,12 +3,14 @@ import Image from "next/image";
 import NavDesktop from "../navDesktop";
 import NavMobile from "../navMobile";
 import Hamburger from "../hamburger";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useContext } from "react";
 import Link from "next/dist/client/link";
 import styles from "./index.module.css";
+import client from "../../client.js";
+import TourContext from "../../context/ToursContext";
+
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
-
   const updateTarget = useCallback((e) => {
     if (e.matches) {
       setTargetReached(true);
@@ -32,6 +34,7 @@ const useMediaQuery = (width) => {
 };
 
 function Header() {
+  const { tour } = useContext(TourContext);
   const [toggle, setToggle] = useState(false);
   const isBreakpoint = useMediaQuery(768);
   useEffect(() => {
@@ -55,8 +58,21 @@ function Header() {
           )
         ) : null}
       </div>
-      {toggle && <NavMobile toggle={toggle} setToggle={setToggle} />}
+      {toggle && (
+        <NavMobile toggle={toggle} setToggle={setToggle} tours={tour} />
+      )}
     </div>
   );
 }
+export async function getStaticProps() {
+  const query1 = `*[_type == "tour-card"]`;
+  const tours = await client.fetch(query1);
+  console.log(tours);
+  return {
+    props: {
+      tours,
+    },
+  };
+}
+
 export default Header;
