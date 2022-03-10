@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import client from "../../client";
 import imageUrlBuilder from "@sanity/image-url";
 import styles from "./index.module.css";
@@ -7,11 +7,12 @@ import { FaMapSigns } from "@react-icons/all-files/fa/FaMapSigns";
 import { FaThumbsUp } from "@react-icons/all-files/fa/FaThumbsUp";
 import { ImArrowRight } from "@react-icons/all-files/im/ImArrowRight";
 import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
-
+import ToursContext from "../../context/ToursContext";
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
-const Tour = ({ tour }) => {
+const Tour = ({ tour, tours }) => {
+  const { setTour } = useContext(ToursContext);
   const [gallery, toggleGallery] = useState(false);
   const [imgId, setImgId] = useState("");
   const openGallery = (id) => {
@@ -45,12 +46,13 @@ const Tour = ({ tour }) => {
     });
   };
   useEffect(() => {
+    setTour(tours);
     if (typeof window != "undefined" && window.document) {
       if (gallery) {
         document.body.style.overflow = "hidden";
       } else document.body.style.overflow = "";
     }
-  });
+  }, [tours]);
   const GalleryApp = ({ id }) => {
     return (
       <div
@@ -151,6 +153,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const { slug = "" } = context.params;
+  const query1 = `*[_type == "tour-card"]{title, slug, type, featured}`;
+  const tours = await client.fetch(query1);
   const tour = await client.fetch(
     `
     *[_type == "tour-card" && slug.current == $slug][0]{page}
@@ -160,6 +164,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       tour,
+      tours,
     },
     revalidate: 5,
   };

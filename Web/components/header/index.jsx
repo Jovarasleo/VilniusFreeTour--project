@@ -50,13 +50,11 @@ function Header() {
             <Image src={logo} alt="me" width="94" height="72" />
           </a>
         </Link>
-        {isBreakpoint !== "undefined" ? (
-          isBreakpoint ? (
-            <Hamburger onClick={() => setToggle(!toggle)} toggle={toggle} />
-          ) : (
-            <NavDesktop />
-          )
-        ) : null}
+        {isBreakpoint ? (
+          <Hamburger onClick={() => setToggle(!toggle)} toggle={toggle} />
+        ) : (
+          <NavDesktop toggle={toggle} setToggle={setToggle} tours={tour} />
+        )}
       </div>
       {toggle && (
         <NavMobile toggle={toggle} setToggle={setToggle} tours={tour} />

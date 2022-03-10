@@ -4,6 +4,16 @@ export default {
   type: "document",
   fields: [
     {
+      name: "featured",
+      title: "marked===featured",
+      type: "boolean",
+    },
+    {
+      name: "type",
+      title: "marked===free",
+      type: "boolean",
+    },
+    {
       name: "title",
       title: "Title",
       type: "string",

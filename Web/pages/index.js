@@ -29,22 +29,24 @@ const Index = ({ tours, banner, msg, meetingPoint }) => {
       <div className="contentWrapper">
         <div className="cardsWrapper">
           {tours?.map((card) => {
-            return (
-              <Link
-                key={card.title}
-                href="/tours/[tours]"
-                as={`/tours/${card?.slug?.current}`}
-              >
-                <a>
-                  <TourCard
-                    key={card?.title}
-                    coverImg={card?.mainImage?.asset?._ref}
-                    title={card?.title}
-                    description={card?.description}
-                  />
-                </a>
-              </Link>
-            );
+            if (card.featured) {
+              return (
+                <Link
+                  key={card.title}
+                  href="/tours/[tours]"
+                  as={`/tours/${card?.slug?.current}`}
+                >
+                  <a>
+                    <TourCard
+                      key={card?.title}
+                      coverImg={card?.mainImage?.asset?._ref}
+                      title={card?.title}
+                      description={card?.description}
+                    />
+                  </a>
+                </Link>
+              );
+            }
           })}
         </div>
       </div>
@@ -65,7 +67,7 @@ const Index = ({ tours, banner, msg, meetingPoint }) => {
   );
 };
 export async function getStaticProps() {
-  const query1 = `*[_type == "tour-card"]{title, description, mainImage, slug}`;
+  const query1 = `*[_type == "tour-card"]{title, description, mainImage, slug, type, featured}`;
   const query2 = `*[_type == "banner"]`;
   const query3 = `*[_type == "ImpMsg"]`;
   const query4 = `*[_type == "meetingPoint"]`;

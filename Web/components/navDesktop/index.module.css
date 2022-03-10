@@ -5,10 +5,14 @@
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 20px;
-  margin-left: 20px;
+  margin-left: 40px;
   font-weight: 300;
 }
-.navLinks li a:hover {
+.navLinks li:hover {
+  text-shadow: 0px 0px 2px #ffffff;
+  text-decoration: overline;
+}
+.navLinks button:hover {
   text-shadow: 0px 0px 2px #ffffff;
   text-decoration: overline;
 }
@@ -17,7 +21,44 @@
   justify-content: space-between;
   width: 100%;
 }
+.navLinks button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
 .linksWrapper {
   display: flex;
   align-items: center;
+}
+.dropdown {
+  position: absolute;
+
+  top: 80px;
+  background-color: var(--dark400);
+  right: 10px;
+  border-radius: 10px;
+  border: 3px solid var(--dark100);
+}
+.dropdown ul {
+  text-align: left;
+}
+.dropdown button {
+  display: block;
+}
+.dropdown li a {
+  margin: 0;
+  text-align: left;
+}
+.dropdown li {
+  margin: 0 20px;
+  text-align: left;
+}
+.dropdown li svg {
+  position: relative;
+}
+.navLinks svg {
+  color: var(--boneWhite);
+  font-size: 1.8rem;
+  position: absolute;
 }

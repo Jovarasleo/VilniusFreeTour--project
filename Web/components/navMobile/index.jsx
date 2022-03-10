@@ -2,8 +2,8 @@ import styles from "./index.module.css";
 import { useState } from "react";
 import Link from "next/link";
 import { IoMdArrowDropright } from "@react-icons/all-files/io/IoMdArrowDropright";
+import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
 function NavMobile({ toggle, setToggle, tours }) {
-  console.log(tours);
   const [dropdown, setDropdown] = useState(false);
   return (
     <div className={styles.navMobile}>
@@ -17,14 +17,14 @@ function NavMobile({ toggle, setToggle, tours }) {
           <button href="/" onClick={() => setDropdown(!dropdown)}>
             <a>
               Tours
-              <IoMdArrowDropright />
+              {dropdown ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
             </a>
           </button>
         </li>
         {dropdown
           ? tours.map((singleTour, i) => {
               return (
-                <li key={i}>
+                <li key={i} className={styles.marginLeft}>
                   <Link href={`/tours/${singleTour.slug.current}`}>
                     <a onClick={() => setToggle(!toggle)}>{singleTour.title}</a>
                   </Link>
