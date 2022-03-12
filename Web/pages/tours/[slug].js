@@ -52,7 +52,7 @@ const Tour = ({ tour, tours }) => {
         document.body.style.overflow = "hidden";
       } else document.body.style.overflow = "";
     }
-  }, [tours]);
+  }, [tours, gallery]);
   const GalleryApp = ({ id }) => {
     return (
       <div
