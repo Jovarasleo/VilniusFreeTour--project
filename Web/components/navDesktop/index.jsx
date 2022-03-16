@@ -3,85 +3,100 @@ import { IoMdArrowDropright } from "@react-icons/all-files/io/IoMdArrowDropright
 import { IoMdArrowDropleft } from "@react-icons/all-files/io/IoMdArrowDropleft";
 import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 function NavDesktop({ tours }) {
+  const [dropdown, setDropdown] = useState(false);
+  const ref = useRef(null);
+
   function DropdownMenu() {
+    const [firstClick, setFirstClick] = useState(false);
     const [activeMenu, setActiveMenu] = useState("main");
+    function changeState(first, second) {
+      setFirstClick(first);
+      setActiveMenu(second);
+    }
+
     function DropDownItem(props) {
       return (
         <button onClick={() => props.onClick()}>
-          <div className="icon-button">{props.leftIcon}</div>
+          <div className={styles.iconButton}>{props.leftIcon}</div>
           <li>{props.children}</li>
         </button>
       );
     }
     function MainMenu() {
       return (
-        <div className={styles.dropdown}>
-          <DropDownItem onClick={() => setActiveMenu("freeTours")}>
+        <div className={firstClick ? styles.back : null}>
+          <DropDownItem onClick={() => changeState(true, "freeTours")}>
+            <IoMdArrowDropright className={styles.menuArrow} />
             <a>Free Tours</a>
           </DropDownItem>
 
-          <DropDownItem onClick={() => setActiveMenu("privateTours")}>
-            <a>Private Tours</a>
+          <DropDownItem onClick={() => changeState(true, "privateTours")}>
+            <div className={styles.dropdownButtonWrapper}>
+              <IoMdArrowDropright className={styles.menuArrow} />
+              <a>Private Tours</a>
+            </div>
           </DropDownItem>
         </div>
       );
     }
     function FreeTours() {
       return (
-        <ul className={styles.dropdown}>
-          <li>
+        <>
+          <div>
             <DropDownItem
               leftIcon={<IoMdArrowDropleft />}
               onClick={() => setActiveMenu("main")}
             ></DropDownItem>
-          </li>
-
-          {tours.map((tour, i) => {
-            if (tour.type) {
-              return (
-                <li key={i}>
-                  <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
-                </li>
-              );
-            }
-          })}
-        </ul>
+          </div>
+          <ul className={styles.dropdown}>
+            {tours.map((tour, i) => {
+              if (tour.type) {
+                return (
+                  <li key={i}>
+                    <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        </>
       );
     }
     function PrivateTours() {
       return (
-        <ul className={styles.dropdown}>
-          <li>
+        <>
+          <div>
             <DropDownItem
               leftIcon={<IoMdArrowDropleft />}
               onClick={() => setActiveMenu("main")}
             ></DropDownItem>
-          </li>
-
-          {tours?.map((tour, i) => {
-            if (!tour.type) {
-              return (
-                <li key={i}>
-                  <a href={`tours/${tour.slug.current}`}>{tour.title}</a>{" "}
-                </li>
-              );
-            }
-          })}
-        </ul>
+          </div>
+          <ul className={styles.dropdown}>
+            {tours?.map((tour, i) => {
+              if (!tour.type) {
+                return (
+                  <li key={i}>
+                    <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        </>
       );
     }
     return (
-      <>
+      <div className={styles.dropdownWrapper} ref={ref}>
         {activeMenu === "main" && <MainMenu />}
         {activeMenu === "freeTours" && <FreeTours />}
         {activeMenu === "privateTours" && <PrivateTours />}
-      </>
+      </div>
     );
   }
-  const [dropdown, setDropdown] = useState(false);
+
   return (
     <div className={styles.linksWrapper}>
       <ul className={styles.navLinks}>

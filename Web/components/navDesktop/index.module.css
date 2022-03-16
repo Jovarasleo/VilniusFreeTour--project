@@ -5,14 +5,13 @@
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 20px;
-  margin-left: 40px;
   font-weight: 300;
 }
-.navLinks li:hover {
+.navLinks > li:hover {
   text-shadow: 0px 0px 2px #ffffff;
   text-decoration: overline;
 }
-.navLinks button:hover {
+.navLinks > li button:hover {
   text-shadow: 0px 0px 2px #ffffff;
   text-decoration: overline;
 }
@@ -20,39 +19,37 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  gap: 35px;
 }
 .navLinks button {
   background: none;
   border: none;
   cursor: pointer;
-  position: relative;
 }
 .linksWrapper {
   display: flex;
   align-items: center;
 }
+.back {
+  position: relative;
+  animation-duration: 0.5s;
+  animation-name: slideBack;
+}
 .dropdown {
-  position: absolute;
-
-  top: 80px;
-  background-color: var(--dark400);
-  right: 10px;
-  border-radius: 10px;
-  border: 3px solid var(--dark100);
+  position: relative;
+  animation-duration: 0.5s;
+  animation-name: slide;
 }
 .dropdown ul {
   text-align: left;
 }
-.dropdown button {
-  display: block;
-}
+
 .dropdown li a {
   margin: 0;
   text-align: left;
 }
 .dropdown li {
-  margin: 0 20px;
-  text-align: left;
+  margin-bottom: 5px;
 }
 .dropdown li svg {
   position: relative;
@@ -61,4 +58,50 @@
   color: var(--boneWhite);
   font-size: 1.8rem;
   position: absolute;
+}
+.iconButton svg {
+  position: relative;
+  left: 10px;
+}
+.menuArrow {
+  position: absolute;
+  right: 0px;
+}
+.dropdownWrapper {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  min-width: 200px;
+  overflow: hidden;
+  position: absolute;
+  top: 80px;
+  background-color: var(--dark400);
+  right: 10px;
+  border-radius: 10px;
+  border: 3px solid var(--dark100);
+}
+.dropdownWrapper button {
+  display: block;
+}
+.dropdownWrapper li a {
+  padding: 1px 10px;
+}
+.dropdownWrapper li a:hover {
+  background-color: var(--dark300);
+  border-radius: 15px;
+}
+@keyframes slide {
+  0% {
+    right: -300px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@keyframes slideBack {
+  0% {
+    right: 300px;
+  }
+  100% {
+    right: 0px;
+  }
 }
