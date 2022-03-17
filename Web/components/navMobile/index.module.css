@@ -1,11 +1,11 @@
 .navMobile {
   position: absolute;
   right: 0;
-  top: 0px;
+  top: 90px;
   background-color: var(--dark500);
   width: 100%;
-  transition: transform 1s ease-in-out;
-  transform: translateY(90px);
+  /* transform: translateX(-100%);
+  animation: slidein 0.5s forwards; */
 }
 .navMobile button {
   background: inherit;
@@ -34,10 +34,82 @@
   text-decoration: none;
   color: var(--boneWhite);
   font-size: 20px;
-  margin-left: 20px;
   font-weight: 400;
+}
+.navLinks > li a {
+  margin-left: 20px;
 }
 .navLinks li a:hover {
   text-decoration: overline;
   text-shadow: 0px 0px 1px;
+}
+.menu {
+  margin-left: 30px;
+}
+.menu button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  width: 100%;
+}
+.secondaryMenu {
+  margin-left: 40px;
+}
+.menu button:hover {
+  background-color: var(--dark300);
+}
+.MenuEnter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.MenuEnterActive {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.MenuExit {
+  position: absolute;
+}
+.MenuExitActive {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+
+.MenuSecondaryEnter {
+  transform: translateX(110%);
+}
+.MenuSecondaryEnterActive {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menuSecondaryExit {
+}
+.menuSecondaryExitActive {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
+}
+.MobileMenuEnter {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+.MobileMenuActive {
+  transform: translateX(110%);
+}
+.MobileMenuExit {
+}
+.MobileMenuExitActive {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
+}
+@keyframes slidein {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
 }

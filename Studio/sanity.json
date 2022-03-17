@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "Vilnius_Tours"
-  },
   "api": {
     "projectId": "tohdfp7d",
     "dataset": "production"
+  },
+  "project": {
+    "name": "Vilnius_Tours"
   },
   "plugins": [
     "@sanity/base",

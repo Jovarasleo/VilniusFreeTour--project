@@ -9,11 +9,9 @@
 }
 .navLinks > li:hover {
   text-shadow: 0px 0px 2px #ffffff;
-  text-decoration: overline;
 }
 .navLinks > li button:hover {
   text-shadow: 0px 0px 2px #ffffff;
-  text-decoration: overline;
 }
 .navLinks {
   display: flex;
@@ -30,78 +28,93 @@
   display: flex;
   align-items: center;
 }
-.back {
-  position: relative;
-  animation-duration: 0.5s;
-  animation-name: slideBack;
-}
-.dropdown {
-  position: relative;
-  animation-duration: 0.5s;
-  animation-name: slide;
-}
-.dropdown ul {
-  text-align: left;
-}
 
-.dropdown li a {
-  margin: 0;
-  text-align: left;
-}
-.dropdown li {
-  margin-bottom: 5px;
-}
-.dropdown li svg {
-  position: relative;
-}
 .navLinks svg {
   color: var(--boneWhite);
   font-size: 1.8rem;
   position: absolute;
 }
+.iconButton {
+  border-radius: 5px;
+  padding: 5px 10px;
+}
 .iconButton svg {
   position: relative;
-  left: 10px;
+}
+.iconButton:hover {
+  background-color: var(--dark300);
 }
 .menuArrow {
   position: absolute;
   right: 0px;
 }
+
 .dropdownWrapper {
-  box-sizing: border-box;
+  min-width: 250px;
   padding: 5px 10px;
-  min-width: 200px;
   overflow: hidden;
   position: absolute;
   top: 80px;
   background-color: var(--dark400);
-  right: 10px;
+  transition: all var(--speed) ease;
   border-radius: 10px;
   border: 3px solid var(--dark100);
 }
 .dropdownWrapper button {
   display: block;
+  display: flex;
+  width: 100%;
 }
 .dropdownWrapper li a {
-  padding: 1px 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: flex;
 }
 .dropdownWrapper li a:hover {
   background-color: var(--dark300);
-  border-radius: 15px;
 }
-@keyframes slide {
-  0% {
-    right: -300px;
-  }
-  100% {
-    right: 0px;
-  }
+.menu {
+  width: 100%;
 }
-@keyframes slideBack {
-  0% {
-    right: 300px;
-  }
-  100% {
-    right: 0px;
-  }
+.menu button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  width: 100%;
+}
+.menu button:hover {
+  background-color: var(--dark300);
+}
+.MenuEnter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.MenuEnterActive {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.MenuExit {
+  position: absolute;
+}
+.MenuExitActive {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+
+.MenuSecondaryEnter {
+  transform: translateX(110%);
+}
+.MenuSecondaryEnterActive {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menuSecondaryExit {
+}
+.menuSecondaryExitActive {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
 }

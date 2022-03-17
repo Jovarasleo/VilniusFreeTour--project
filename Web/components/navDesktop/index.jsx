@@ -2,101 +2,124 @@ import styles from "./index.module.css";
 import { IoMdArrowDropright } from "@react-icons/all-files/io/IoMdArrowDropright";
 import { IoMdArrowDropleft } from "@react-icons/all-files/io/IoMdArrowDropleft";
 import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
+import { IoIosArrowDropleft } from "@react-icons/all-files/io/IoIosArrowDropleft";
 import Link from "next/link";
-import { useEffect, useState, useRef } from "react";
-
+import { useEffect, useState, useRef, useContext } from "react";
+import { CSSTransition } from "react-transition-group";
 function NavDesktop({ tours }) {
   const [dropdown, setDropdown] = useState(false);
-  const ref = useRef(null);
-
   function DropdownMenu() {
-    const [firstClick, setFirstClick] = useState(false);
     const [activeMenu, setActiveMenu] = useState("main");
-    function changeState(first, second) {
-      setFirstClick(first);
-      setActiveMenu(second);
+    const [menuHeight, setMenuHeight] = useState(null);
+
+    const dropdownRef = useRef(null);
+
+    function calcDimensions(el) {
+      const height = el.offsetHeight;
+      setMenuHeight(height);
     }
 
+    useEffect(() => {
+      setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
+    }, []);
     function DropDownItem(props) {
       return (
-        <button onClick={() => props.onClick()}>
-          <div className={styles.iconButton}>{props.leftIcon}</div>
-          <li>{props.children}</li>
+        <button
+          onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+          className={styles.iconButton}
+        >
+          {props.leftIcon}
+          {props.children}
         </button>
       );
     }
-    function MainMenu() {
-      return (
-        <div className={firstClick ? styles.back : null}>
-          <DropDownItem onClick={() => changeState(true, "freeTours")}>
-            <IoMdArrowDropright className={styles.menuArrow} />
-            <a>Free Tours</a>
-          </DropDownItem>
-
-          <DropDownItem onClick={() => changeState(true, "privateTours")}>
-            <div className={styles.dropdownButtonWrapper}>
-              <IoMdArrowDropright className={styles.menuArrow} />
-              <a>Private Tours</a>
-            </div>
-          </DropDownItem>
-        </div>
-      );
-    }
-    function FreeTours() {
-      return (
-        <>
-          <div>
-            <DropDownItem
-              leftIcon={<IoMdArrowDropleft />}
-              onClick={() => setActiveMenu("main")}
-            ></DropDownItem>
-          </div>
-          <ul className={styles.dropdown}>
-            {tours.map((tour, i) => {
-              if (tour.type) {
-                return (
-                  <li key={i}>
-                    <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
-                  </li>
-                );
-              }
-            })}
-          </ul>
-        </>
-      );
-    }
-    function PrivateTours() {
-      return (
-        <>
-          <div>
-            <DropDownItem
-              leftIcon={<IoMdArrowDropleft />}
-              onClick={() => setActiveMenu("main")}
-            ></DropDownItem>
-          </div>
-          <ul className={styles.dropdown}>
-            {tours?.map((tour, i) => {
-              if (!tour.type) {
-                return (
-                  <li key={i}>
-                    <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
-                  </li>
-                );
-              }
-            })}
-          </ul>
-        </>
-      );
-    }
     return (
-      <div className={styles.dropdownWrapper} ref={ref}>
-        {activeMenu === "main" && <MainMenu />}
-        {activeMenu === "freeTours" && <FreeTours />}
-        {activeMenu === "privateTours" && <PrivateTours />}
+      <div
+        className={styles.dropdownWrapper}
+        style={{ height: menuHeight }}
+        ref={dropdownRef}
+      >
+        <CSSTransition
+          in={activeMenu === "main"}
+          unmountOnExit
+          timeout={500}
+          classNames={{
+            enter: styles.MenuEnter,
+            enterActive: styles.MenuEnterActive,
+            exit: styles.MenuExit,
+            exitActive: styles.MenuExitActive,
+          }}
+          onEnter={calcDimensions}
+        >
+          <div className={styles.menu}>
+            <DropDownItem goToMenu="freeTours">Free Tours</DropDownItem>
+
+            <DropDownItem goToMenu="privateTours">Private Tours</DropDownItem>
+          </div>
+        </CSSTransition>
+        <CSSTransition
+          in={activeMenu === "freeTours"}
+          onEnter={calcDimensions}
+          unmountOnExit
+          timeout={500}
+          classNames={{
+            enter: styles.MenuSecondaryEnter,
+            enterActive: styles.MenuSecondaryEnterActive,
+            exit: styles.menuSecondaryExit,
+            exitActive: styles.menuSecondaryExitActive,
+          }}
+        >
+          <div>
+            <DropDownItem
+              leftIcon={<IoIosArrowDropleft />}
+              goToMenu="main"
+            ></DropDownItem>
+            <ul className={styles.dropdown}>
+              {tours.map((tour, i) => {
+                if (tour.type) {
+                  return (
+                    <li key={i}>
+                      <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
+                    </li>
+                  );
+                }
+              })}
+            </ul>
+          </div>
+        </CSSTransition>
+        <CSSTransition
+          in={activeMenu === "privateTours"}
+          onEnter={calcDimensions}
+          timeout={500}
+          unmountOnExit
+          classNames={{
+            enter: styles.MenuSecondaryEnter,
+            enterActive: styles.MenuSecondaryEnterActive,
+            exit: styles.menuSecondaryExit,
+            exitActive: styles.menuSecondaryExitActive,
+          }}
+        >
+          <div>
+            <DropDownItem
+              leftIcon={<IoIosArrowDropleft />}
+              goToMenu="main"
+            ></DropDownItem>
+            <ul className={styles.dropdown}>
+              {tours?.map((tour, i) => {
+                if (!tour.type) {
+                  return (
+                    <li key={i}>
+                      <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
+                    </li>
+                  );
+                }
+              })}
+            </ul>
+          </div>
+        </CSSTransition>
       </div>
     );
   }
-
   return (
     <div className={styles.linksWrapper}>
       <ul className={styles.navLinks}>
@@ -123,4 +146,5 @@ function NavDesktop({ tours }) {
     </div>
   );
 }
+
 export default NavDesktop;
