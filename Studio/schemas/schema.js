@@ -13,6 +13,7 @@ import banner from "./banner";
 import author from "./author";
 import tourCard from "./tourCard";
 import meetingPoint from "./meetingPoint";
+import dynamicPage from "./dynamicPage";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -29,6 +30,7 @@ export default createSchema({
     banner,
     tourCard,
     meetingPoint,
+    dynamicPage,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

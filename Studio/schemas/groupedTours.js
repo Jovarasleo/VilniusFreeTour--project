@@ -1,13 +1,9 @@
 export default {
-  name: "tour-card",
-  title: "Tour",
+  name: "tourCard",
+  title: "GroupedTour",
   type: "document",
+
   fields: [
-    {
-      name: "group",
-      title: "Group",
-      type: "string",
-    },
     {
       name: "featured",
       title: "marked===featured",

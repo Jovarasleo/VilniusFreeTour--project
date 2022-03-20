@@ -24,7 +24,7 @@ const Index = ({ tours, banner, msg, meetingPoint }) => {
         <ImportantMsg title={msg[0]?.title} children={msg[0]?.text} />
       ) : null}
       <h3 className="homePage--sectionTitle">
-        Walking <span className="colored">tours</span> We Offer
+        Our Featured <span className="colored">Walking</span> Tours
       </h3>
       <div className="contentWrapper">
         <div className="cardsWrapper">
@@ -67,7 +67,7 @@ const Index = ({ tours, banner, msg, meetingPoint }) => {
   );
 };
 export async function getStaticProps() {
-  const query1 = `*[_type == "tour-card"]{title, description, mainImage, slug, type, featured}`;
+  const query1 = `*[_type == "tour-card"]{title, description, mainImage, slug, type, featured, group}`;
   const query2 = `*[_type == "banner"]`;
   const query3 = `*[_type == "ImpMsg"]`;
   const query4 = `*[_type == "meetingPoint"]`;
@@ -75,6 +75,7 @@ export async function getStaticProps() {
   const banner = await client.fetch(query2);
   const msg = await client.fetch(query3);
   const meetingPoint = await client.fetch(query4);
+
   return {
     props: {
       tours,
