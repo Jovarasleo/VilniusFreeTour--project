@@ -7,20 +7,29 @@ import Link from "next/link";
 import { useEffect, useState, useRef, useContext } from "react";
 import { CSSTransition } from "react-transition-group";
 function NavDesktop({ tours }) {
+  const wrapperRef = useRef(null);
   const [dropdown, setDropdown] = useState(false);
+
   function DropdownMenu() {
     const [activeMenu, setActiveMenu] = useState("main");
     const [menuHeight, setMenuHeight] = useState(null);
 
-    const dropdownRef = useRef(null);
-
     function calcDimensions(el) {
       const height = el.offsetHeight;
       setMenuHeight(height);
+      console.log("calcdimensions fires");
     }
-
+    const handleClickOutside = (event) => {
+      if (!wrapperRef?.current?.contains(event.target)) {
+        setDropdown(false);
+      }
+    };
     useEffect(() => {
-      setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
+      setMenuHeight(wrapperRef.current?.firstChild.offsetHeight);
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
     }, []);
     function DropDownItem(props) {
       return (
@@ -37,23 +46,22 @@ function NavDesktop({ tours }) {
       <div
         className={styles.dropdownWrapper}
         style={{ height: menuHeight }}
-        ref={dropdownRef}
+        ref={wrapperRef}
       >
         <CSSTransition
           in={activeMenu === "main"}
+          onEnter={calcDimensions}
           unmountOnExit
-          timeout={500}
+          timeout={300}
           classNames={{
             enter: styles.MenuEnter,
             enterActive: styles.MenuEnterActive,
             exit: styles.MenuExit,
             exitActive: styles.MenuExitActive,
           }}
-          onEnter={calcDimensions}
         >
           <div className={styles.menu}>
             <DropDownItem goToMenu="freeTours">Free Tours</DropDownItem>
-
             <DropDownItem goToMenu="privateTours">Private Tours</DropDownItem>
           </div>
         </CSSTransition>
@@ -61,7 +69,7 @@ function NavDesktop({ tours }) {
           in={activeMenu === "freeTours"}
           onEnter={calcDimensions}
           unmountOnExit
-          timeout={500}
+          timeout={300}
           classNames={{
             enter: styles.MenuSecondaryEnter,
             enterActive: styles.MenuSecondaryEnterActive,
@@ -90,7 +98,7 @@ function NavDesktop({ tours }) {
         <CSSTransition
           in={activeMenu === "privateTours"}
           onEnter={calcDimensions}
-          timeout={500}
+          timeout={300}
           unmountOnExit
           classNames={{
             enter: styles.MenuSecondaryEnter,
@@ -128,8 +136,8 @@ function NavDesktop({ tours }) {
             <a>Home</a>
           </Link>
         </li>
-        <li onClick={() => setDropdown(!dropdown)}>
-          <button>
+        <li>
+          <button onMouseDown={() => setDropdown(!dropdown)}>
             <a>
               Tours
               {dropdown ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}

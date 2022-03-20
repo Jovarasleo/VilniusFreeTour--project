@@ -3,7 +3,7 @@ import Image from "next/image";
 import NavDesktop from "../navDesktop";
 import NavMobile from "../navMobile";
 import Hamburger from "../hamburger";
-import { useState, useCallback, useEffect, useContext } from "react";
+import { useState, useCallback, useEffect, useContext, useRef } from "react";
 import Link from "next/dist/client/link";
 import styles from "./index.module.css";
 import client from "../../client.js";
