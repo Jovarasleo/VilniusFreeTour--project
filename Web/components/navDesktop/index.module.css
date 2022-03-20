@@ -37,6 +37,11 @@
 .iconButton {
   border-radius: 5px;
   padding: 5px 10px;
+  display: block;
+}
+.iconButton p {
+  width: 100%;
+  text-align: left;
 }
 .iconButton svg {
   position: relative;
@@ -74,6 +79,7 @@
   background-color: var(--dark300);
 }
 .menu {
+  box-sizing: border-box;
   width: 100%;
 }
 .menu button {
@@ -95,6 +101,7 @@
 }
 .MenuEnterActive {
   transform: translateX(0%);
+  width: 92.5%;
   transition: all var(--speed) ease;
 }
 .MenuExit {
@@ -111,8 +118,6 @@
 .MenuSecondaryEnterActive {
   transform: translateX(0%);
   transition: all var(--speed) ease;
-}
-.menuSecondaryExit {
 }
 .menuSecondaryExitActive {
   transform: translateX(110%);

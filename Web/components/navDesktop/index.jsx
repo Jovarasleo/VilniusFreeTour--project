@@ -3,6 +3,7 @@ import { IoMdArrowDropright } from "@react-icons/all-files/io/IoMdArrowDropright
 import { IoMdArrowDropleft } from "@react-icons/all-files/io/IoMdArrowDropleft";
 import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
 import { IoIosArrowDropleft } from "@react-icons/all-files/io/IoIosArrowDropleft";
+import { IoIosArrowDropright } from "@react-icons/all-files/io/IoIosArrowDropright";
 import Link from "next/link";
 import { useEffect, useState, useRef, useContext } from "react";
 import { CSSTransition } from "react-transition-group";
@@ -39,6 +40,7 @@ function NavDesktop({ tours }) {
         >
           {props.leftIcon}
           {props.children}
+          {props.rightIcon}
         </button>
       );
     }
@@ -61,8 +63,18 @@ function NavDesktop({ tours }) {
           }}
         >
           <div className={styles.menu}>
-            <DropDownItem goToMenu="freeTours">Free Tours</DropDownItem>
-            <DropDownItem goToMenu="privateTours">Private Tours</DropDownItem>
+            <DropDownItem
+              rightIcon={<IoIosArrowDropright />}
+              goToMenu="freeTours"
+            >
+              <p>Free Tours</p>
+            </DropDownItem>
+            <DropDownItem
+              rightIcon={<IoIosArrowDropright />}
+              goToMenu="privateTours"
+            >
+              <p>Private Tours</p>
+            </DropDownItem>
           </div>
         </CSSTransition>
         <CSSTransition
