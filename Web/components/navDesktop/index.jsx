@@ -1,6 +1,5 @@
 import styles from "./index.module.css";
 import { IoMdArrowDropright } from "@react-icons/all-files/io/IoMdArrowDropright";
-import { IoMdArrowDropleft } from "@react-icons/all-files/io/IoMdArrowDropleft";
 import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
 import { IoIosArrowDropleft } from "@react-icons/all-files/io/IoIosArrowDropleft";
 import { IoIosArrowDropright } from "@react-icons/all-files/io/IoIosArrowDropright";
@@ -18,7 +17,6 @@ function NavDesktop({ tours }) {
     function calcDimensions(el) {
       const height = el.offsetHeight;
       setMenuHeight(height);
-      console.log("calcdimensions fires");
     }
     const handleClickOutside = (event) => {
       if (!wrapperRef?.current?.contains(event.target)) {

@@ -1,6 +1,5 @@
 import client from "../client";
-function dynamicPage({ dynamicPage, pageSlug }) {
-  console.log(dynamicPage, pageSlug);
+function dynamicPage({ pageSlug }) {
   return (
     <div>
       <div>

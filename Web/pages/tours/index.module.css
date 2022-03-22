@@ -1,55 +1,62 @@
 .singleTourWrapper {
   display: flex;
   margin: 0 auto;
-  max-width: 1240px;
+  max-width: 1400px;
+  flex-wrap: wrap;
 }
 .tour {
-  border: 20px solid var(--electricBlue);
+  border: 10px solid var(--lightRed);
   display: flex;
   flex-direction: column;
-  flex: 1;
-  background-color: var(--white);
+  flex: 2;
+  background-color: var(--boneWhite);
   padding: 15px;
+  order: 0;
+}
+.break {
+  flex-basis: 100%;
+  height: 0;
 }
 .icon {
-  font-size: 80px;
-  color: var(--primaryTheme);
+  color: var(--white);
+  font-size: 50px;
+}
+.signPostIcon {
+  margin: 0 auto;
+  margin-left: 0;
+  display: flex;
+  border-radius: 50%;
+  background-color: var(--lightRed);
+  font-size: 1.8rem;
+  padding: 12px;
+  color: var(--white);
 }
 .iconWrapper {
-  margin: 0 auto;
-  display: flex;
-  margin-top: 30px;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
   border-radius: 50%;
-  background-color: var(--electricBlue);
-}
-.thumbsUpIcon {
-  font-size: 24px;
-  margin: 40px;
+  display: flex;
+  background-color: var(--dark500);
+  font-size: 1.8rem;
+  padding: 12px;
   color: var(--white);
   margin: 0 auto;
-
-  padding: 0px;
 }
 .gallery {
-  border: 20px solid var(--dark400);
-  flex: 2;
-  background-color: var(--dark400);
+  border-top: 10px solid var(--dark500);
+  border-left: 10px solid var(--dark500);
+  flex: 3;
+  background-color: var(--dark500);
   display: flex;
   flex-direction: column;
 }
 .innerGallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 }
 .gallery img {
   box-sizing: border-box;
   object-fit: cover;
-  height: 250px;
+  height: 220px;
   object-position: 0px 60%;
   width: 100%;
   transition-duration: 0.3s;
@@ -64,19 +71,18 @@
 }
 .imgContainer {
   overflow: hidden;
-  width: calc(50% - 10px);
-  height: 250px;
+  width: calc(50% - 5px);
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 }
 .eyeIcon {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  color: var(--dark100);
+  color: var(--boneWhite);
   font-size: 40px;
 }
 .imgOverlay {
@@ -145,7 +151,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   height: 400px;
 }
 .galleryImgBig {
@@ -167,7 +173,6 @@
   position: absolute;
   top: 50%;
   width: calc(100% - 20px);
-  max-width: 600px;
   height: auto;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -175,8 +180,9 @@
 }
 .galleryMessage {
   box-sizing: border-box;
-  padding: 30px;
-  border-top: 20px solid var(--dark400);
+  padding: 10px;
+  border-top: 10px solid var(--dark500);
+  border-bottom: 10px solid var(--dark500);
   background-color: var(--boneWhite);
   width: 100%;
   display: flex;
@@ -185,35 +191,93 @@
   flex: 1;
 }
 .galleryMessage p {
-  margin-bottom: 30px;
+  text-align: center;
+  width: 80%;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 10px auto;
+}
+.galleryMessage h4 {
+  margin: 0 auto;
+  margin-top: 15px;
 }
 .singleTourThemeWrapper {
   position: relative;
-  background-color: var(--dark400);
+  background-color: var(--dark500);
   flex: 1;
 }
 .singleTourTitle {
-  margin: 0 auto;
-  font-size: 40px;
-  font-weight: 200;
-  letter-spacing: 2px;
+  font-size: 3rem;
+  font-weight: 500;
   padding: 20px 0px;
 }
 .singleTourHTag {
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: justify;
 }
 .list {
   margin: 20px 0px;
   padding: 0 15px;
-  font-size: 14px;
+  font-size: 16px;
+}
+.list li {
+  margin-bottom: 10px;
+}
+.list li span {
+  position: relative;
+  left: 10px;
+}
+.list li::marker {
+  position: relative;
+  color: var(--dark500);
+  font-size: 1.2em;
+  margin-top: 5px;
+  content: "►";
+}
+.list li::after {
+  font-weight: 2rem;
+}
+
+.description {
+  font-size: 16px;
+  text-align: justify;
+}
+.infoCards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: var(--dark500);
+  border-top: 10px solid var(--lightRed);
+  gap: 10px;
 }
 @media only screen and (max-width: 1000px) {
+  .gallery {
+    order: 2;
+    border-left: none;
+  }
   .singleTourWrapper {
     flex-direction: column;
+  }
+  .infoCards {
+    grid-template-columns: repeat(2, 1fr);
+    border-top: none;
+    margin: 0 10px;
+  }
+  .singleTourTitle {
+    font-size: 2rem;
   }
 }
 @media only screen and (max-width: 640px) {
   .imgContainer {
     width: 100%;
+  }
+  .gallery img {
+    height: 300px;
+  }
+  .singleTourTitle {
+    font-size: 1.6rem;
+  }
+  .infoCards {
+    grid-template-columns: 1fr;
   }
 }

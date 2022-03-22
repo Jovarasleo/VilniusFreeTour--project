@@ -65,7 +65,6 @@ function Header() {
 export async function getStaticProps() {
   const query1 = `*[_type == "tour-card"]`;
   const tours = await client.fetch(query1);
-  console.log(tours);
   return {
     props: {
       tours,

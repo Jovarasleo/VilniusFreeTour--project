@@ -5,7 +5,7 @@
   --secondaryOverlay: #995a5aa8;
   --white: #ffffff;
   --boneWhite: rgb(240, 240, 240);
-  --electricBlue: rgb(197, 100, 87);
+  --lightRed: rgb(197, 100, 87);
   --dark500: rgb(36, 36, 36);
   --dark400: rgb(48, 48, 48);
   --dark300: rgb(77, 77, 77);
@@ -15,7 +15,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Roboto Slab", serif;
+  font-family: "Montserrat", serif;
 }
 
 a,

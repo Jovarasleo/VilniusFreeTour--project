@@ -86,9 +86,52 @@ export default {
           ],
         },
         {
+          name: "galleryTitle",
+          title: "Gallery Title",
+          type: "string",
+        },
+        {
           name: "galleryMsg",
-          title: "GalleryMsg",
+          title: "Gallery Message",
           type: "text",
+        },
+        {
+          name: "infoSection",
+          title: "Info Cards",
+          type: "array",
+          of: [
+            {
+              name: "infoCard",
+              title: "Info Card",
+              type: "document",
+              fields: [
+                {
+                  name: "selectCardType",
+                  title:
+                    "Select Card Type = {location || time || price || booking}",
+                  type: "string",
+                },
+                {
+                  name: "Title",
+                  title: "Title",
+                  type: "string",
+                },
+                {
+                  name: "Textbox",
+                  title: "Textbox",
+                  type: "text",
+                },
+                {
+                  name: "image",
+                  title: "Image",
+                  type: "image",
+                  options: {
+                    hotspot: true,
+                  },
+                },
+              ],
+            },
+          ],
         },
       ],
     },

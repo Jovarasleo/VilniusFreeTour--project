@@ -1,0 +1,33 @@
+.priceCard {
+  box-sizing: border-box;
+  background-color: var(--boneWhite);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px 20px 20px;
+  max-height: 400px;
+}
+
+.priceCard h4 {
+  margin: 10px 0px;
+}
+.priceCard p {
+  text-align: justify;
+  margin-top: 10px;
+}
+.imageWrapper {
+  max-width: 100%;
+}
+.priceCard img {
+  max-width: 90%;
+}
+.icon {
+  background-color: var(--dark500);
+  color: var(--white);
+  border-radius: 50%;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  display: flex;
+  padding: 12px;
+}
+@media only screen and (max-width: 1000px) {
+}

@@ -3,10 +3,17 @@ import client from "../../client";
 import imageUrlBuilder from "@sanity/image-url";
 import styles from "./index.module.css";
 import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
+import { BsEye } from "react-icons/bs";
 import { FaMapSigns } from "@react-icons/all-files/fa/FaMapSigns";
 import { FaThumbsUp } from "@react-icons/all-files/fa/FaThumbsUp";
 import { ImArrowRight } from "@react-icons/all-files/im/ImArrowRight";
 import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
+import { BsCreditCard } from "@react-icons/all-files/bs/BsCreditCard";
+import { BsClockHistory } from "@react-icons/all-files/bs/BsClockHistory";
+import { VscLocation } from "@react-icons/all-files/vsc/VscLocation";
+import { FaRegThumbsUp } from "react-icons/fa";
+import { BsSignpostSplit } from "react-icons/bs";
+import InfoCard from "../../components/infoCard";
 import ToursContext from "../../context/ToursContext";
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
@@ -98,19 +105,25 @@ const Tour = ({ tour, tours }) => {
         <div className={styles.singleTourThemeWrapper}>
           <div className={styles.singleTourWrapper}>
             <section className={styles.tour}>
-              <FaMapSigns className={styles.icon} />
+              <div className={styles.signPostIcon}>
+                <BsSignpostSplit className={styles.icon} />
+              </div>
               <h4 className={styles.singleTourTitle}>{tourContent?.title}</h4>
               <h6 className={styles.singleTourHTag}>{tourContent?.hTag}</h6>
               <ul className={styles.list}>
                 {tourContent?.highLights?.map((list, id) => {
-                  return <li key={id}>{list}</li>;
+                  return (
+                    <li key={id}>
+                      <span>{list}</span>
+                    </li>
+                  );
                 })}
               </ul>
-              <p>{tourContent?.description}</p>
+              <p className={styles.description}>{tourContent?.description}</p>
             </section>
             <section className={styles.gallery}>
               <div className={styles.innerGallery}>
-                {tourContent?.gallery?.slice(0, 4).map((galleryImg) => {
+                {tourContent?.gallery?.slice(0, 6).map((galleryImg) => {
                   return (
                     <div
                       className={styles.imgContainer}
@@ -119,7 +132,7 @@ const Tour = ({ tour, tours }) => {
                     >
                       <img src={urlFor(galleryImg).format("webp")} />
                       <div className={styles.imgOverlay}>
-                        <BsFillEyeFill className={styles.eyeIcon} />
+                        <BsEye className={styles.eyeIcon} />
                       </div>
                     </div>
                   );
@@ -127,10 +140,25 @@ const Tour = ({ tour, tours }) => {
               </div>
               <div className={styles.galleryMessage}>
                 <div className={styles.iconWrapper}>
-                  <FaThumbsUp className={styles.thumbsUpIcon} />
+                  <FaRegThumbsUp className={styles.thumbsUpIcon} />
                 </div>
+                <h4>{tourContent?.galleryTitle}</h4>
                 <p>{tourContent?.galleryMsg}</p>
               </div>
+            </section>
+
+            <section className={styles.infoCards}>
+              {tourContent?.infoSection?.map((card, index) => {
+                return (
+                  <InfoCard
+                    key={index}
+                    title={card.Title}
+                    textbox={card.Textbox}
+                    selectCardType={card.selectCardType}
+                    img={card?.image}
+                  ></InfoCard>
+                );
+              })}
             </section>
           </div>
           {gallery ? <GalleryApp id={imgId} /> : null}
