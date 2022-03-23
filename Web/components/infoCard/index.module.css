@@ -1,24 +1,27 @@
-.priceCard {
+.infoCard {
   box-sizing: border-box;
   background-color: var(--boneWhite);
   display: flex;
   flex-direction: column;
   padding: 10px 20px 20px 20px;
-  max-height: 400px;
 }
 
-.priceCard h4 {
+.infoCard h4 {
   margin: 10px 0px;
 }
-.priceCard p {
+.infoCard p {
   text-align: justify;
   margin-top: 10px;
 }
 .imageWrapper {
-  max-width: 100%;
+  object-fit: contain;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.priceCard img {
-  max-width: 90%;
+.infoCard img {
+  width: 100%;
 }
 .icon {
   background-color: var(--dark500);
@@ -28,6 +31,9 @@
   font-size: 1.8rem;
   display: flex;
   padding: 12px;
+}
+.calendarWrapper {
+  margin-top: 20px;
 }
 @media only screen and (max-width: 1000px) {
 }

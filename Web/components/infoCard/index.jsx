@@ -7,6 +7,8 @@ import { BsClockHistory } from "@react-icons/all-files/bs/BsClockHistory";
 import { VscLocation } from "@react-icons/all-files/vsc/VscLocation";
 import { BsPencilSquare } from "react-icons/bs";
 
+import Calendar from "react-calendar";
+
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
@@ -33,7 +35,7 @@ function InfoCard({
     }
   }
   return (
-    <div className={styles.priceCard}>
+    <div className={styles.infoCard}>
       <div className={styles.icon} style={{ backgroundColor: iconColor }}>
         {icon(selectCardType)}
       </div>
@@ -45,6 +47,9 @@ function InfoCard({
         </div>
       ) : null}
       <p>{textbox}</p>
+      {selectCardType === "booking" ? (
+        <div className={styles.calendarWrapper}>{<Calendar />}</div>
+      ) : null}
     </div>
   );
 }

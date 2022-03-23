@@ -11,7 +11,6 @@
   flex: 2;
   background-color: var(--boneWhite);
   padding: 15px;
-  order: 0;
 }
 .break {
   flex-basis: 100%;
@@ -42,21 +41,21 @@
 }
 .gallery {
   border-top: 10px solid var(--dark500);
-  border-left: 10px solid var(--dark500);
-  flex: 3;
   background-color: var(--dark500);
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .innerGallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 10px;
 }
 .gallery img {
   box-sizing: border-box;
   object-fit: cover;
-  height: 220px;
+  height: 300px;
   object-position: 0px 60%;
   width: 100%;
   transition-duration: 0.3s;
@@ -71,7 +70,7 @@
 }
 .imgContainer {
   overflow: hidden;
-  width: calc(50% - 5px);
+  width: calc(33% - 5px);
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -181,14 +180,13 @@
 .galleryMessage {
   box-sizing: border-box;
   padding: 10px;
-  border-top: 10px solid var(--dark500);
-  border-bottom: 10px solid var(--dark500);
   background-color: var(--boneWhite);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  grid-column: 1 / span 2;
 }
 .galleryMessage p {
   text-align: center;
@@ -238,30 +236,27 @@
 .list li::after {
   font-weight: 2rem;
 }
-
 .description {
   font-size: 16px;
   text-align: justify;
 }
 .infoCards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   background-color: var(--dark500);
-  border-top: 10px solid var(--lightRed);
+  margin: 10px 0px 0 10px;
   gap: 10px;
+  flex: 3;
 }
 @media only screen and (max-width: 1000px) {
   .gallery {
-    order: 2;
     border-left: none;
+  }
+  .infoCards {
+    margin: 10px 10px 0 10px;
   }
   .singleTourWrapper {
     flex-direction: column;
-  }
-  .infoCards {
-    grid-template-columns: repeat(2, 1fr);
-    border-top: none;
-    margin: 0 10px;
   }
   .singleTourTitle {
     font-size: 2rem;
@@ -278,6 +273,9 @@
     font-size: 1.6rem;
   }
   .infoCards {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    border-left: none;
+    margin: 10px 0px 0px 0px;
   }
 }

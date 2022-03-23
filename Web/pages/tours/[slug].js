@@ -15,6 +15,7 @@ import { FaRegThumbsUp } from "react-icons/fa";
 import { BsSignpostSplit } from "react-icons/bs";
 import InfoCard from "../../components/infoCard";
 import ToursContext from "../../context/ToursContext";
+
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
@@ -121,9 +122,32 @@ const Tour = ({ tour, tours }) => {
               </ul>
               <p className={styles.description}>{tourContent?.description}</p>
             </section>
+            {tourContent.infoSection ? (
+              <section className={styles.infoCards}>
+                {tourContent?.infoSection?.map((card, index) => {
+                  return (
+                    <InfoCard
+                      key={index}
+                      title={card.Title}
+                      textbox={card.Textbox}
+                      selectCardType={card.selectCardType}
+                      img={card?.image}
+                    ></InfoCard>
+                  );
+                })}
+                <div className={styles.galleryMessage}>
+                  <div className={styles.iconWrapper}>
+                    <FaRegThumbsUp className={styles.thumbsUpIcon} />
+                  </div>
+                  <h4>{tourContent?.galleryTitle}</h4>
+                  <p>{tourContent?.galleryMsg}</p>
+                </div>
+              </section>
+            ) : null}
+
             <section className={styles.gallery}>
               <div className={styles.innerGallery}>
-                {tourContent?.gallery?.slice(0, 6).map((galleryImg) => {
+                {tourContent?.gallery?.slice(0, 3).map((galleryImg) => {
                   return (
                     <div
                       className={styles.imgContainer}
@@ -138,27 +162,6 @@ const Tour = ({ tour, tours }) => {
                   );
                 })}
               </div>
-              <div className={styles.galleryMessage}>
-                <div className={styles.iconWrapper}>
-                  <FaRegThumbsUp className={styles.thumbsUpIcon} />
-                </div>
-                <h4>{tourContent?.galleryTitle}</h4>
-                <p>{tourContent?.galleryMsg}</p>
-              </div>
-            </section>
-
-            <section className={styles.infoCards}>
-              {tourContent?.infoSection?.map((card, index) => {
-                return (
-                  <InfoCard
-                    key={index}
-                    title={card.Title}
-                    textbox={card.Textbox}
-                    selectCardType={card.selectCardType}
-                    img={card?.image}
-                  ></InfoCard>
-                );
-              })}
             </section>
           </div>
           {gallery ? <GalleryApp id={imgId} /> : null}
