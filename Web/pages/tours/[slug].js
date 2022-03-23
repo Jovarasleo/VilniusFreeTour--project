@@ -1,21 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import client from "../../client";
 import imageUrlBuilder from "@sanity/image-url";
-import styles from "./index.module.css";
-import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
 import { BsEye } from "react-icons/bs";
-import { FaMapSigns } from "@react-icons/all-files/fa/FaMapSigns";
-import { FaThumbsUp } from "@react-icons/all-files/fa/FaThumbsUp";
-import { ImArrowRight } from "@react-icons/all-files/im/ImArrowRight";
-import { ImArrowLeft } from "@react-icons/all-files/im/ImArrowLeft";
-import { BsCreditCard } from "@react-icons/all-files/bs/BsCreditCard";
-import { BsClockHistory } from "@react-icons/all-files/bs/BsClockHistory";
-import { VscLocation } from "@react-icons/all-files/vsc/VscLocation";
 import { FaRegThumbsUp } from "react-icons/fa";
 import { BsSignpostSplit } from "react-icons/bs";
 import InfoCard from "../../components/infoCard";
 import ToursContext from "../../context/ToursContext";
-
+import GalleryApp from "../../components/gallery";
+import styles from "./index.module.css";
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
@@ -23,35 +15,11 @@ const Tour = ({ tour, tours }) => {
   const { setTour } = useContext(ToursContext);
   const [gallery, toggleGallery] = useState(false);
   const [imgId, setImgId] = useState("");
+  const tourContent = tour?.page;
+  const galleryArray = tourContent?.gallery;
   const openGallery = (id) => {
     toggleGallery(!gallery);
     setImgId(id);
-  };
-  const tourContent = tour?.page;
-  const galleryArray = tourContent?.gallery;
-  const imgForwards = (e) => {
-    e.stopPropagation();
-    galleryArray?.map((item, index) => {
-      let newIndex = index;
-      if (item._key === imgId) {
-        if (index === galleryArray.length - 1) {
-          newIndex = -1;
-        }
-        setImgId(galleryArray[newIndex + 1]?._key);
-      }
-    });
-  };
-  const imgBackwards = (e) => {
-    e.stopPropagation();
-    galleryArray?.map((item, index) => {
-      let newIndex = index;
-      if (item._key === imgId) {
-        if (index === 0) {
-          newIndex = galleryArray.length;
-        }
-        setImgId(galleryArray[newIndex - 1]?._key);
-      }
-    });
   };
   useEffect(() => {
     setTour(tours);
@@ -61,45 +29,6 @@ const Tour = ({ tour, tours }) => {
       } else document.body.style.overflow = "";
     }
   }, [tours, gallery]);
-  const GalleryApp = ({ id }) => {
-    return (
-      <div
-        className={styles.galleryImgBig}
-        onClick={() => toggleGallery(!gallery)}
-      >
-        <div className={styles.galleryImgWrapper}>
-          <button
-            className={styles.goBackwards.concat(" ", styles.arrowWrapper)}
-            onClick={(e) => imgBackwards(e)}
-          >
-            <ImArrowLeft
-              className={styles.arrowLeft.concat(" ", styles.arrow)}
-            />
-          </button>
-
-          {tourContent?.gallery?.map((imgFile) => {
-            if (imgFile._key === id) {
-              return (
-                <img
-                  key={imgFile._key}
-                  src={urlFor(imgFile).format("webp")}
-                  onClick={(e) => e.stopPropagation()}
-                />
-              );
-            }
-          })}
-          <button
-            className={styles.goForward.concat(" ", styles.arrowWrapper)}
-            onClick={(e) => imgForwards(e)}
-          >
-            <ImArrowRight
-              className={styles.arrowRight.concat(" ", styles.arrow)}
-            />
-          </button>
-        </div>
-      </div>
-    );
-  };
   return (
     <>
       {tourContent ? (
@@ -164,7 +93,16 @@ const Tour = ({ tour, tours }) => {
               </div>
             </section>
           </div>
-          {gallery ? <GalleryApp id={imgId} /> : null}
+          {gallery ? (
+            <GalleryApp
+              id={imgId}
+              setImgId={setImgId}
+              imgId={imgId}
+              galleryArray={galleryArray}
+              gallery={gallery}
+              toggleGallery={toggleGallery}
+            />
+          ) : null}
         </div>
       ) : null}
     </>
