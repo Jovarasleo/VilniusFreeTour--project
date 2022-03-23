@@ -3,6 +3,7 @@ export default {
   title: "Dynamic Page",
   type: "document",
   fields: [
+    { name: "buttonTitle", title: "Button Title", type: "string" },
     {
       name: "title",
       title: "Title",
@@ -15,6 +16,14 @@ export default {
       options: {
         source: "title",
         maxLength: 96,
+      },
+    },
+    {
+      name: "mainImage",
+      title: "Main image",
+      type: "image",
+      options: {
+        hotspot: true,
       },
     },
     {

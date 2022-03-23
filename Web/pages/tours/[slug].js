@@ -6,12 +6,14 @@ import { FaRegThumbsUp } from "react-icons/fa";
 import { BsSignpostSplit } from "react-icons/bs";
 import InfoCard from "../../components/infoCard";
 import ToursContext from "../../context/ToursContext";
+import DynamicPageContext from "../../context/DynamicPageContext";
 import GalleryApp from "../../components/gallery";
 import styles from "./index.module.css";
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
-const Tour = ({ tour, tours }) => {
+const Tour = ({ tour, tours, dynamicPage }) => {
+  const { setPage } = useContext(DynamicPageContext);
   const { setTour } = useContext(ToursContext);
   const [gallery, toggleGallery] = useState(false);
   const [imgId, setImgId] = useState("");
@@ -23,6 +25,7 @@ const Tour = ({ tour, tours }) => {
   };
   useEffect(() => {
     setTour(tours);
+    setPage(dynamicPage);
     if (typeof window != "undefined" && window.document) {
       if (gallery) {
         document.body.style.overflow = "hidden";
@@ -123,6 +126,8 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const query1 = `*[_type == "tour-card"]{title, slug, type, featured}`;
+  const query2 = `*[_type == "dynamic-page"]`;
+  const dynamicPage = await client.fetch(query2);
   const tours = await client.fetch(query1);
   const tour = await client.fetch(
     `
@@ -134,6 +139,7 @@ export async function getStaticProps(context) {
     props: {
       tour,
       tours,
+      dynamicPage,
     },
     revalidate: 5,
   };

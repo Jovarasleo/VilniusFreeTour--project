@@ -1,5 +1,11 @@
 import client from "../client";
-function dynamicPage({ pageSlug }) {
+import { useContext, useEffect } from "react";
+import DynamicPageContext from "../context/DynamicPageContext";
+function dynamicPage({ pageSlug, dynamicPage }) {
+  const { setPage } = useContext(DynamicPageContext);
+  useEffect(() => {
+    setPage(dynamicPage);
+  });
   return (
     <div>
       <div>

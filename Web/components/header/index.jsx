@@ -8,7 +8,7 @@ import Link from "next/dist/client/link";
 import styles from "./index.module.css";
 import client from "../../client.js";
 import TourContext from "../../context/ToursContext";
-
+import DynamicPageContext from "../../context/DynamicPageContext";
 const useMediaQuery = (width) => {
   const [targetReached, setTargetReached] = useState(false);
   const updateTarget = useCallback((e) => {
@@ -34,6 +34,7 @@ const useMediaQuery = (width) => {
 };
 
 function Header() {
+  const { page } = useContext(DynamicPageContext);
   const { tour } = useContext(TourContext);
   const [toggle, setToggle] = useState(false);
   const isBreakpoint = useMediaQuery(768);
@@ -53,7 +54,12 @@ function Header() {
         {isBreakpoint ? (
           <Hamburger onClick={() => setToggle(!toggle)} toggle={toggle} />
         ) : (
-          <NavDesktop toggle={toggle} setToggle={setToggle} tours={tour} />
+          <NavDesktop
+            toggle={toggle}
+            setToggle={setToggle}
+            tours={tour}
+            pages={page}
+          />
         )}
       </div>
       {toggle && (
@@ -64,10 +70,13 @@ function Header() {
 }
 export async function getStaticProps() {
   const query1 = `*[_type == "tour-card"]`;
+  const query2 = `*[_type == "dynamic-page"]`;
   const tours = await client.fetch(query1);
+  const dynamicPage = await client.fetch(query2);
   return {
     props: {
       tours,
+      dynamicPage,
     },
   };
 }

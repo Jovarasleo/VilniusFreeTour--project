@@ -7,16 +7,19 @@ import client from "../client";
 import GMaps from "../components/googleMap";
 import imageUrlBuilder from "@sanity/image-url";
 import ToursContext from "../context/ToursContext";
+import DynamicPageContext from "../context/DynamicPageContext";
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
 }
-const Index = ({ tours, banner, msg, meetingPoint }) => {
+const Index = ({ tours, banner, msg, meetingPoint, dynamicPage }) => {
   const { setTour } = useContext(ToursContext);
+  const { setPage } = useContext(DynamicPageContext);
   const bannerItem = banner[0]?.bannerImage?.asset?._ref;
   const meetingPointImg = meetingPoint[0]?.meetingPointImage?.asset?._ref;
   useEffect(() => {
     setTour(tours);
-  }, [tours]);
+    setPage(dynamicPage);
+  }, [tours, dynamicPage]);
   return (
     <>
       <Banner background={bannerItem} />
@@ -71,10 +74,12 @@ export async function getStaticProps() {
   const query2 = `*[_type == "banner"]`;
   const query3 = `*[_type == "ImpMsg"]`;
   const query4 = `*[_type == "meetingPoint"]`;
+  const query5 = `*[_type == "dynamic-page"]`;
   const tours = await client.fetch(query1);
   const banner = await client.fetch(query2);
   const msg = await client.fetch(query3);
   const meetingPoint = await client.fetch(query4);
+  const dynamicPage = await client.fetch(query5);
 
   return {
     props: {
@@ -82,6 +87,7 @@ export async function getStaticProps() {
       banner,
       msg,
       meetingPoint,
+      dynamicPage,
     },
   };
 }

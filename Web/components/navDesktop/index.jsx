@@ -6,7 +6,7 @@ import { IoIosArrowDropright } from "@react-icons/all-files/io/IoIosArrowDroprig
 import Link from "next/link";
 import { useEffect, useState, useRef, useContext } from "react";
 import { CSSTransition } from "react-transition-group";
-function NavDesktop({ tours }) {
+function NavDesktop({ tours, pages }) {
   const wrapperRef = useRef(null);
   const [dropdown, setDropdown] = useState(false);
 
@@ -148,18 +148,22 @@ function NavDesktop({ tours }) {
         </li>
         <li>
           <button onMouseDown={() => setDropdown(!dropdown)}>
-            <a>
-              Tours
-              {dropdown ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
-            </a>
+            <a>Tours</a>
+            {dropdown ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
           </button>
         </li>
         {dropdown ? <DropdownMenu /> : null}
-        <li>
-          <Link href="/about">
-            <a>About Us</a>
-          </Link>
-        </li>
+        {pages
+          ? pages.map((page, i) => {
+              return (
+                <li key={i}>
+                  <Link href={`/${page.slug.current}`}>
+                    <a>{page.buttonTitle}</a>
+                  </Link>
+                </li>
+              );
+            })
+          : null}
       </ul>
     </div>
   );
