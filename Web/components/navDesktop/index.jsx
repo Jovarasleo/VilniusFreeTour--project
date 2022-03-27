@@ -8,6 +8,7 @@ import { useEffect, useState, useRef, useContext } from "react";
 import { CSSTransition } from "react-transition-group";
 function NavDesktop({ tours, pages }) {
   const wrapperRef = useRef(null);
+  const innerRef = useRef(null);
   const [dropdown, setDropdown] = useState(false);
 
   function DropdownMenu() {
@@ -19,15 +20,18 @@ function NavDesktop({ tours, pages }) {
       setMenuHeight(height);
     }
     const handleClickOutside = (event) => {
-      if (!wrapperRef?.current?.contains(event.target)) {
+      if (
+        !wrapperRef?.current?.contains(event.target) &&
+        !innerRef.current?.contains(event.target)
+      ) {
         setDropdown(false);
       }
     };
     useEffect(() => {
       setMenuHeight(wrapperRef.current?.firstChild.offsetHeight);
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("click", handleClickOutside, true);
       return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("click", handleClickOutside, true);
       };
     }, []);
     function DropDownItem(props) {
@@ -147,7 +151,7 @@ function NavDesktop({ tours, pages }) {
           </Link>
         </li>
         <li>
-          <button onMouseDown={() => setDropdown(!dropdown)}>
+          <button onClick={() => setDropdown(!dropdown)} ref={innerRef}>
             <a>Tours</a>
             {dropdown ? <IoMdArrowDropdown /> : <IoMdArrowDropright />}
           </button>
