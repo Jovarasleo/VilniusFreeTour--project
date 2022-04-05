@@ -42,7 +42,7 @@ function NavMobile({ toggle, setToggle, tours }) {
         <CSSTransition
           in={activeMenu === "main"}
           unmountOnExit
-          timeout={500}
+          timeout={25000}
           classNames={{
             enter: styles.MenuEnter,
             enterActive: styles.MenuEnterActive,
@@ -61,7 +61,7 @@ function NavMobile({ toggle, setToggle, tours }) {
           in={activeMenu === "freeTours"}
           onEnter={calcDimensions}
           unmountOnExit
-          timeout={500}
+          timeout={25000}
           classNames={{
             enter: styles.MenuSecondaryEnter,
             enterActive: styles.MenuSecondaryEnterActive,
@@ -90,7 +90,7 @@ function NavMobile({ toggle, setToggle, tours }) {
         <CSSTransition
           in={activeMenu === "privateTours"}
           onEnter={calcDimensions}
-          timeout={500}
+          timeout={25000}
           unmountOnExit
           classNames={{
             enter: styles.MenuSecondaryEnter,

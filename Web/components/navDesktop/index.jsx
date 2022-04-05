@@ -36,14 +36,16 @@ function NavDesktop({ tours, pages }) {
     }, []);
     function DropDownItem(props) {
       return (
-        <button
+        <a
           onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
           className={styles.iconButton}
+          href={props.href}
         >
-          {props.leftIcon}
+          <span>{props.leftIcon}</span>
+
           {props.children}
-          {props.rightIcon}
-        </button>
+          <span className={styles.rightIcon}>{props.rightIcon}</span>
+        </a>
       );
     }
     return (
@@ -56,7 +58,7 @@ function NavDesktop({ tours, pages }) {
           in={activeMenu === "main"}
           onEnter={calcDimensions}
           unmountOnExit
-          timeout={300}
+          timeout={500}
           classNames={{
             enter: styles.MenuEnter,
             enterActive: styles.MenuEnterActive,
@@ -68,14 +70,16 @@ function NavDesktop({ tours, pages }) {
             <DropDownItem
               rightIcon={<IoIosArrowDropright />}
               goToMenu="freeTours"
+              href="#"
             >
-              <p>Free Tours</p>
+              Free Tours
             </DropDownItem>
             <DropDownItem
               rightIcon={<IoIosArrowDropright />}
               goToMenu="privateTours"
+              href="#"
             >
-              <p>Private Tours</p>
+              Private Tours
             </DropDownItem>
           </div>
         </CSSTransition>
@@ -83,7 +87,7 @@ function NavDesktop({ tours, pages }) {
           in={activeMenu === "freeTours"}
           onEnter={calcDimensions}
           unmountOnExit
-          timeout={300}
+          timeout={500}
           classNames={{
             enter: styles.MenuSecondaryEnter,
             enterActive: styles.MenuSecondaryEnterActive,
@@ -91,28 +95,27 @@ function NavDesktop({ tours, pages }) {
             exitActive: styles.menuSecondaryExitActive,
           }}
         >
-          <div>
+          <div className={styles.menu}>
             <DropDownItem
               leftIcon={<IoIosArrowDropleft />}
               goToMenu="main"
+              href="#"
             ></DropDownItem>
-            <ul className={styles.dropdown}>
-              {tours.map((tour, i) => {
-                if (tour.type) {
-                  return (
-                    <li key={i}>
-                      <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
-                    </li>
-                  );
-                }
-              })}
-            </ul>
+            {tours.map((tour, i) => {
+              if (tour.type) {
+                return (
+                  <DropDownItem key={i} href={`/tours/${tour.slug.current}`}>
+                    {tour.title}
+                  </DropDownItem>
+                );
+              }
+            })}
           </div>
         </CSSTransition>
         <CSSTransition
           in={activeMenu === "privateTours"}
           onEnter={calcDimensions}
-          timeout={300}
+          timeout={500}
           unmountOnExit
           classNames={{
             enter: styles.MenuSecondaryEnter,
@@ -121,22 +124,21 @@ function NavDesktop({ tours, pages }) {
             exitActive: styles.menuSecondaryExitActive,
           }}
         >
-          <div>
+          <div className={styles.menu}>
             <DropDownItem
               leftIcon={<IoIosArrowDropleft />}
               goToMenu="main"
+              href="#"
             ></DropDownItem>
-            <ul className={styles.dropdown}>
-              {tours?.map((tour, i) => {
-                if (!tour.type) {
-                  return (
-                    <li key={i}>
-                      <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
-                    </li>
-                  );
-                }
-              })}
-            </ul>
+            {tours?.map((tour, i) => {
+              if (!tour.type) {
+                return (
+                  <DropDownItem key={i} href={`/tours/${tour.slug.current}`}>
+                    {tour.title}
+                  </DropDownItem>
+                );
+              }
+            })}
           </div>
         </CSSTransition>
       </div>

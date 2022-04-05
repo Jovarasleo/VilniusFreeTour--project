@@ -1,11 +1,10 @@
 .navMobile {
+  overflow: hidden;
   position: absolute;
   right: 0;
   top: 90px;
   background-color: var(--dark500);
   width: 100%;
-  /* transform: translateX(-100%);
-  animation: slidein 0.5s forwards; */
 }
 .navMobile button {
   background: inherit;
@@ -58,50 +57,55 @@
 }
 .secondaryMenu {
   margin-left: 40px;
+  overflow: hidden;
 }
 .menu button:hover {
   background-color: var(--dark300);
 }
+.dropdownWrapper {
+  overflow: hidden;
+}
+
 .MenuEnter {
   position: absolute;
-  transform: translateX(-110%);
+  transform: translateY(-110%);
 }
 .MenuEnterActive {
-  transform: translateX(0%);
+  transform: translateY(0%);
   transition: all var(--speed) ease;
 }
 .MenuExit {
   position: absolute;
 }
 .MenuExitActive {
-  transform: translateX(-110%);
+  transform: translateY(-110%);
   transition: all var(--speed) ease;
 }
 
 .MenuSecondaryEnter {
-  transform: translateX(110%);
+  transform: translateY(110%);
 }
 .MenuSecondaryEnterActive {
-  transform: translateX(0%);
+  transform: translateY(0%);
   transition: all var(--speed) ease;
 }
 .menuSecondaryExit {
 }
 .menuSecondaryExitActive {
-  transform: translateX(110%);
+  transform: translateY(110%);
   transition: all var(--speed) ease;
 }
 .MobileMenuEnter {
-  transform: translateX(-110%);
+  transform: translateY(-110%);
   transition: all var(--speed) ease;
 }
 .MobileMenuActive {
-  transform: translateX(110%);
+  transform: translateY(110%);
 }
 .MobileMenuExit {
 }
 .MobileMenuExitActive {
-  transform: translateX(110%);
+  transform: translateY(110%);
   transition: all var(--speed) ease;
 }
 @keyframes slidein {

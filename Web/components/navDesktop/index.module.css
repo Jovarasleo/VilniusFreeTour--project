@@ -3,11 +3,12 @@
   margin-right: 20px;
   position: relative;
 }
-.navLinks li > button {
+.navLinks li button {
   margin-right: 20px;
 }
 .navLinks li a,
-.navLinks button {
+.navLinks button,
+.menu a {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 18px;
@@ -32,11 +33,6 @@
   display: flex;
   align-items: center;
 }
-.linksWrapper {
-  display: flex;
-  align-items: center;
-}
-
 .navLinks svg {
   color: var(--boneWhite);
   font-size: 2rem;
@@ -48,22 +44,27 @@
 }
 .iconButton {
   padding: 5px 10px;
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
 }
-.iconButton p {
-  width: 100%;
-  text-align: left;
+.rightIcon {
+  right: 0;
+  margin-left: auto;
 }
 .iconButton svg {
   position: relative;
+  font-size: 30px;
 }
 .iconButton:hover {
   background-color: var(--dark300);
+  color: var(--boneWhite);
 }
 .menuArrow {
   position: absolute;
   right: 0px;
 }
-
 .dropdownWrapper {
   min-width: 250px;
   padding: 5px 10px;
@@ -71,36 +72,16 @@
   position: absolute;
   top: 80px;
   background-color: var(--dark400);
-  transition: all var(--speed) ease;
+  transition: height var(--speed) ease;
   border-radius: 10px;
   border: 3px solid var(--dark100);
 }
-.dropdownWrapper button {
-  display: block;
-  display: flex;
-  width: 100%;
-}
-.dropdownWrapper li a {
-  padding: 5px 10px;
-  border-radius: 5px;
-  display: flex;
-}
-.dropdownWrapper li a:hover {
-  background-color: var(--dark300);
-}
+
 .menu {
-  box-sizing: border-box;
-  width: 100%;
-}
-.menu button {
-  padding: 5px 10px;
-  border-radius: 5px;
-  text-decoration: none;
   display: flex;
-  width: 100%;
-}
-.menu button:hover {
-  background-color: var(--dark300);
+  flex-direction: column;
+  min-width: 250px;
+  will-change: transform;
 }
 .MenuEnter {
   position: absolute;
@@ -108,15 +89,14 @@
 }
 .MenuEnterActive {
   transform: translateX(0%);
-  width: 92.5%;
-  transition: all var(--speed) ease;
+  transition: transform var(--speed) ease;
 }
 .MenuExit {
   position: absolute;
 }
 .MenuExitActive {
   transform: translateX(-110%);
-  transition: all var(--speed) ease;
+  transition: transform var(--speed) ease;
 }
 
 .MenuSecondaryEnter {
@@ -124,9 +104,9 @@
 }
 .MenuSecondaryEnterActive {
   transform: translateX(0%);
-  transition: all var(--speed) ease;
+  transition: transform var(--speed) ease;
 }
 .menuSecondaryExitActive {
   transform: translateX(110%);
-  transition: all var(--speed) ease;
+  transition: transform var(--speed) ease;
 }
