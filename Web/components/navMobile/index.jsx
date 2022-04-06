@@ -1,18 +1,17 @@
 import styles from "./index.module.css";
 import { useState, useEffect, useRef } from "react";
 import { IoMdArrowDropright } from "@react-icons/all-files/io/IoMdArrowDropright";
-import { IoMdArrowDropleft } from "@react-icons/all-files/io/IoMdArrowDropleft";
 import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
 import { IoIosArrowDropleft } from "@react-icons/all-files/io/IoIosArrowDropleft";
+import { IoIosArrowDropright } from "@react-icons/all-files/io/IoIosArrowDropright";
 import Link from "next/link";
 import { CSSTransition } from "react-transition-group";
-function NavMobile({ toggle, setToggle, tours }) {
+function NavMobile({ toggle, setToggle, tours, pages }) {
   const [dropdown, setDropdown] = useState(false);
+  const dropdownRef = useRef(null);
   function DropdownMenu() {
     const [activeMenu, setActiveMenu] = useState("main");
     const [menuHeight, setMenuHeight] = useState(null);
-
-    const dropdownRef = useRef(null);
 
     function calcDimensions(el) {
       const height = el.offsetHeight;
@@ -24,13 +23,15 @@ function NavMobile({ toggle, setToggle, tours }) {
     }, []);
     function DropDownItem(props) {
       return (
-        <button
+        <a
           onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
           className={styles.iconButton}
+          href={props.href}
         >
-          {props.leftIcon}
+          <span>{props.leftIcon}</span>
           {props.children}
-        </button>
+          <span className={styles.rightIcon}>{props.rightIcon}</span>
+        </a>
       );
     }
     return (
@@ -42,7 +43,7 @@ function NavMobile({ toggle, setToggle, tours }) {
         <CSSTransition
           in={activeMenu === "main"}
           unmountOnExit
-          timeout={25000}
+          timeout={500}
           classNames={{
             enter: styles.MenuEnter,
             enterActive: styles.MenuEnterActive,
@@ -52,16 +53,28 @@ function NavMobile({ toggle, setToggle, tours }) {
           onEnter={calcDimensions}
         >
           <div className={styles.menu}>
-            <DropDownItem goToMenu="freeTours">Free Tours</DropDownItem>
+            <DropDownItem
+              goToMenu="freeTours"
+              rightIcon={<IoIosArrowDropright />}
+              href="#"
+            >
+              Free Tours
+            </DropDownItem>
 
-            <DropDownItem goToMenu="privateTours">Private Tours</DropDownItem>
+            <DropDownItem
+              goToMenu="privateTours"
+              rightIcon={<IoIosArrowDropright />}
+              href="#"
+            >
+              Private Tours
+            </DropDownItem>
           </div>
         </CSSTransition>
         <CSSTransition
           in={activeMenu === "freeTours"}
           onEnter={calcDimensions}
           unmountOnExit
-          timeout={25000}
+          timeout={500}
           classNames={{
             enter: styles.MenuSecondaryEnter,
             enterActive: styles.MenuSecondaryEnterActive,
@@ -69,28 +82,27 @@ function NavMobile({ toggle, setToggle, tours }) {
             exitActive: styles.menuSecondaryExitActive,
           }}
         >
-          <div className={styles.secondaryMenu}>
+          <div className={styles.menu}>
             <DropDownItem
               leftIcon={<IoIosArrowDropleft />}
               goToMenu="main"
+              href="#"
             ></DropDownItem>
-            <ul className={styles.dropdown}>
-              {tours.map((tour, i) => {
-                if (tour.type) {
-                  return (
-                    <li key={i}>
-                      <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
-                    </li>
-                  );
-                }
-              })}
-            </ul>
+            {tours.map((tour, i) => {
+              if (tour.type) {
+                return (
+                  <DropDownItem key={i} href={`/tours/${tour.slug.current}`}>
+                    {tour.title}
+                  </DropDownItem>
+                );
+              }
+            })}
           </div>
         </CSSTransition>
         <CSSTransition
           in={activeMenu === "privateTours"}
           onEnter={calcDimensions}
-          timeout={25000}
+          timeout={500}
           unmountOnExit
           classNames={{
             enter: styles.MenuSecondaryEnter,
@@ -99,22 +111,21 @@ function NavMobile({ toggle, setToggle, tours }) {
             exitActive: styles.menuSecondaryExitActive,
           }}
         >
-          <div className={styles.secondaryMenu}>
+          <div className={styles.menu}>
             <DropDownItem
               leftIcon={<IoIosArrowDropleft />}
               goToMenu="main"
+              href="#"
             ></DropDownItem>
-            <ul className={styles.dropdown}>
-              {tours?.map((tour, i) => {
-                if (!tour.type) {
-                  return (
-                    <li key={i}>
-                      <a href={`/tours/${tour.slug.current}`}>{tour.title}</a>{" "}
-                    </li>
-                  );
-                }
-              })}
-            </ul>
+            {tours?.map((tour, i) => {
+              if (!tour.type) {
+                return (
+                  <DropDownItem key={i} href={`/tours/${tour.slug.current}`}>
+                    {tour.title}
+                  </DropDownItem>
+                );
+              }
+            })}
           </div>
         </CSSTransition>
       </div>
@@ -137,11 +148,17 @@ function NavMobile({ toggle, setToggle, tours }) {
           </button>
         </li>
         {dropdown ? <DropdownMenu /> : null}
-        <li>
-          <Link href="/about">
-            <a onClick={() => setToggle(!toggle)}>About Us</a>
-          </Link>
-        </li>
+        {pages
+          ? pages.map((page, i) => {
+              return (
+                <li key={i}>
+                  <Link href={`/${page.slug.current}`}>
+                    <a onClick={() => setToggle(!toggle)}>{page.buttonTitle}</a>
+                  </Link>
+                </li>
+              );
+            })
+          : null}
       </ul>
     </div>
   );

@@ -1,10 +1,12 @@
 .navMobile {
   overflow: hidden;
-  position: absolute;
+  position: fixed;
+  display: flex;
   right: 0;
   top: 90px;
   background-color: var(--dark500);
   width: 100%;
+  z-index: -5;
 }
 .navMobile button {
   background: inherit;
@@ -25,45 +27,56 @@
 .navLinks {
   margin-top: 10px;
 }
-.navLinks li {
+.navLinks > li {
   list-style-type: none;
   margin-bottom: 10px;
-}
-.navLinks li a {
-  text-decoration: none;
-  color: var(--boneWhite);
-  font-size: 20px;
-  font-weight: 400;
 }
 .navLinks > li a {
   margin-left: 20px;
 }
-.navLinks li a:hover {
-  text-decoration: overline;
+.navLinks a:hover {
   text-shadow: 0px 0px 1px;
+  color: var(--boneWhite);
+}
+.dropdownWrapper {
+  transition: height var(--speed) ease;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+.iconButton {
+  padding: 0px 10px;
+  border-radius: 5px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.iconButton:hover {
+  background-color: var(--dark300);
+  color: var(--boneWhite);
 }
 .menu {
-  margin-left: 30px;
+  position: relative;
+  display: flex;
+
+  flex-direction: column;
+  will-change: transform;
 }
-.menu button {
-  padding: 5px 10px;
-  border-radius: 5px;
+.navLinks a {
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-size: 20px;
-  font-weight: 300;
-  display: flex;
-  width: 100%;
+  font-size: 18px;
+  font-weight: 500;
 }
-.secondaryMenu {
-  margin-left: 40px;
-  overflow: hidden;
+.rightIcon {
+  padding-left: 10px;
+  right: 0;
+  margin-left: auto;
 }
 .menu button:hover {
   background-color: var(--dark300);
-}
-.dropdownWrapper {
-  overflow: hidden;
 }
 
 .MenuEnter {
@@ -94,26 +107,4 @@
 .menuSecondaryExitActive {
   transform: translateY(110%);
   transition: all var(--speed) ease;
-}
-.MobileMenuEnter {
-  transform: translateY(-110%);
-  transition: all var(--speed) ease;
-}
-.MobileMenuActive {
-  transform: translateY(110%);
-}
-.MobileMenuExit {
-}
-.MobileMenuExitActive {
-  transform: translateY(110%);
-  transition: all var(--speed) ease;
-}
-@keyframes slidein {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(0%);
-  }
 }

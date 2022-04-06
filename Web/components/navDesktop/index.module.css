@@ -84,8 +84,8 @@
   will-change: transform;
 }
 .MenuEnter {
-  position: absolute;
   transform: translateX(-110%);
+  position: absolute;
 }
 .MenuEnterActive {
   transform: translateX(0%);

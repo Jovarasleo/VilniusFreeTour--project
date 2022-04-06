@@ -4,7 +4,7 @@ import { IoMdArrowDropdown } from "@react-icons/all-files/io/IoMdArrowDropdown";
 import { IoIosArrowDropleft } from "@react-icons/all-files/io/IoIosArrowDropleft";
 import { IoIosArrowDropright } from "@react-icons/all-files/io/IoIosArrowDropright";
 import Link from "next/link";
-import { useEffect, useState, useRef, useContext } from "react";
+import { useEffect, useState, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 function NavDesktop({ tours, pages }) {
   const wrapperRef = useRef(null);
